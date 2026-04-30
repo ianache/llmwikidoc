@@ -1,0 +1,8 @@
+#!/bin/sh
+# llmwikidoc post-commit hook
+# Runs in background so it never blocks the commit.
+# If llmwikidoc fails, the error is logged to wiki/log.md (not to the terminal).
+
+if command -v llmwikidoc >/dev/null 2>&1; then
+    llmwikidoc ingest --quiet &
+fi
