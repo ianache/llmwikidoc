@@ -1,0 +1,464 @@
+{
+  ".gitignore::the project's .gitignore file now excludes `.codegraph/` and": {
+    "statement": "The project's .gitignore file now excludes `.codegraph/` and `.claude/` directories.",
+    "entity": ".gitignore",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the `llmwikidoc` tool helps manage a project wiki by integra": {
+    "statement": "The `llmwikidoc` tool helps manage a project wiki by integrating with Git commits.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "gemini_api_key::the `gemini_api_key` environment variable must be exported o": {
+    "statement": "The `GEMINI_API_KEY` environment variable must be exported or set to use the `llmwikidoc` tool.",
+    "entity": "GEMINI_API_KEY",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc init::`llmwikidoc init` installs a git hook and creates the projec": {
+    "statement": "`llmwikidoc init` installs a Git hook and creates the project wiki.",
+    "entity": "llmwikidoc init",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "git commit::a `git commit` triggers the `llmwikidoc ingest` process via ": {
+    "statement": "A `git commit` triggers the `llmwikidoc ingest` process via a hook, which updates the wiki.",
+    "entity": "git commit",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc query::`llmwikidoc query` is used to ask questions about wiki conte": {
+    "statement": "`llmwikidoc query` is used to ask questions about wiki content, e.g., '\u00bfqu\u00e9 hace UserService?'.",
+    "entity": "llmwikidoc query",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc status::`llmwikidoc status` is available to check the state of the w": {
+    "statement": "`llmwikidoc status` is available to check the state of the wiki.",
+    "entity": "llmwikidoc status",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc.consolidate::the `llmwikidoc.consolidate` module contains logic for ebbin": {
+    "statement": "The `llmwikidoc.consolidate` module contains logic for Ebbinghaus decay and fact/page promotion.",
+    "entity": "llmwikidoc.consolidate",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::`_apply_decay` reduces the confidence of facts over time if ": {
+    "statement": "`_apply_decay` reduces the confidence of facts over time if they are not reinforced, simulating Ebbinghaus decay.",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::`_apply_decay` can generate warnings for facts whose confide": {
+    "statement": "`_apply_decay` can generate warnings for facts whose confidence drops below a very low threshold (e.g., 0.35).",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "memory tiers::facts are categorized into `working`, `episodic`, `semantic`": {
+    "statement": "Facts are categorized into `working`, `episodic`, `semantic`, and `procedural` memory tiers.",
+    "entity": "memory tiers",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::the `_fact_tier` function determines a fact's memory tier ba": {
+    "statement": "The `_fact_tier` function determines a fact's memory tier based on its number of sources and confidence.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "fact::a fact with a single source is typically classified as 'work": {
+    "statement": "A fact with a single source is typically classified as 'working' tier.",
+    "entity": "Fact",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "fact::a fact with two sources is typically classified as 'episodic": {
+    "statement": "A fact with two sources is typically classified as 'episodic' tier.",
+    "entity": "Fact",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "fact::a fact with three or more sources is typically classified as": {
+    "statement": "A fact with three or more sources is typically classified as 'semantic' tier.",
+    "entity": "Fact",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "procedural facts::a fact with five or more sources and a confidence level of 0": {
+    "statement": "A fact with five or more sources and a confidence level of 0.9 or higher is classified as 'procedural' tier.",
+    "entity": "procedural facts",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "procedural facts::`procedural facts` decay slower than facts in other tiers du": {
+    "statement": "`procedural facts` decay slower than facts in other tiers due to a `_tier_stability_multiplier`.",
+    "entity": "procedural facts",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "_promote_facts::`_promote_facts` promotes facts by adding a 'consolidated' m": {
+    "statement": "`_promote_facts` promotes facts by adding a 'consolidated' marker to their sources.",
+    "entity": "_promote_facts",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "_promote_facts::facts already marked with 'consolidated' in their sources ar": {
+    "statement": "Facts already marked with 'consolidated' in their sources are skipped by `_promote_facts` to prevent double-promotion.",
+    "entity": "_promote_facts",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "_promote_facts::fact promotion requires a minimum confidence level (e.g., 0.": {
+    "statement": "Fact promotion requires a minimum confidence level (e.g., 0.5 or 0.65 depending on context).",
+    "entity": "_promote_facts",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::`_compute_new_tier` determines if a fact can move to a highe": {
+    "statement": "`_compute_new_tier` determines if a fact can move to a higher tier based on age (e.g., older than `WORKING_TTL_DAYS`) or number of sources.",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:36:09Z",
+    "last_reinforced": "2026-04-30T03:36:09Z",
+    "contradicted_by": []
+  },
+  ".gitignore::the `.gitignore` file now includes entries for `.codegraph/`": {
+    "statement": "The `.gitignore` file now includes entries for `.codegraph/` and `.claude/` directories.",
+    "entity": ".gitignore",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "readme.md::the `readme.md` provides instructions for setting the `gemin": {
+    "statement": "The `README.md` provides instructions for setting the `GEMINI_API_KEY` environment variable.",
+    "entity": "README.md",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "readme.md::the `readme.md` outlines the basic usage workflow of `llmwik": {
+    "statement": "The `README.md` outlines the basic usage workflow of `llmwikidoc` commands: `init`, `commit`, `query`, and `status`.",
+    "entity": "README.md",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc init::`llmwikidoc init` installs a git hook and creates a wiki dir": {
+    "statement": "`llmwikidoc init` installs a git hook and creates a wiki directory.",
+    "entity": "llmwikidoc init",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "git commit hook::a `git commit` triggers the `llmwikidoc ingest` command via ": {
+    "statement": "A `git commit` triggers the `llmwikidoc ingest` command via a hook, updating the wiki.",
+    "entity": "git commit hook",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "tests/test_consolidate.py::`tests/test_consolidate.py` is a new file that contains test": {
+    "statement": "`tests/test_consolidate.py` is a new file that contains tests for `consolidate.py`.",
+    "entity": "tests/test_consolidate.py",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "consolidate.py::`consolidate.py` implements functionalities related to ebbin": {
+    "statement": "`consolidate.py` implements functionalities related to Ebbinghaus decay, tier promotion, and digest generation.",
+    "entity": "consolidate.py",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::`_apply_decay` reduces the confidence of facts based on thei": {
+    "statement": "`_apply_decay` reduces the confidence of facts based on their age.",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::`_apply_decay` does not reduce confidence for recently reinf": {
+    "statement": "`_apply_decay` does not reduce confidence for recently reinforced facts.",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::`_apply_decay` can generate warnings for facts with very low": {
+    "statement": "`_apply_decay` can generate warnings for facts with very low confidence.",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_promote_facts::`_promote_facts` adds a 'consolidated' marker to a fact's so": {
+    "statement": "`_promote_facts` adds a 'consolidated' marker to a fact's sources if it meets promotion criteria, such as age and confidence.",
+    "entity": "_promote_facts",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_promote_facts::`_promote_facts` skips facts that have already been marked '": {
+    "statement": "`_promote_facts` skips facts that have already been marked 'consolidated'.",
+    "entity": "_promote_facts",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::`_fact_tier` categorizes a fact into 'working', 'episodic', ": {
+    "statement": "`_fact_tier` categorizes a fact into 'working', 'episodic', 'semantic', or 'procedural' tiers.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::a fact is considered 'working' tier if it has a single sourc": {
+    "statement": "A fact is considered 'working' tier if it has a single source.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::a fact is considered 'episodic' tier if it has two sources.": {
+    "statement": "A fact is considered 'episodic' tier if it has two sources.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::a fact is considered 'semantic' tier if it has three sources": {
+    "statement": "A fact is considered 'semantic' tier if it has three sources.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::a fact can be 'procedural' tier if it has high confidence (e": {
+    "statement": "A fact can be 'procedural' tier if it has high confidence (e.g., 0.9) and five or more sources.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_tier_stability_multiplier::the `_tier_stability_multiplier` is higher for 'procedural' ": {
+    "statement": "The `_tier_stability_multiplier` is higher for 'procedural' facts than for 'semantic', 'episodic', or 'working' facts, indicating slower decay.",
+    "entity": "_tier_stability_multiplier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::a fact can be promoted from 'working' to 'episodic' tier bas": {
+    "statement": "A fact can be promoted from 'working' to 'episodic' tier based on its number of sources or its age (e.g., older than `WORKING_TTL_DAYS`).",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::a fact can be promoted from 'episodic' to 'semantic' tier ba": {
+    "statement": "A fact can be promoted from 'episodic' to 'semantic' tier based on its number of sources or its age (e.g., older than `EPISODIC_TTL_DAYS`).",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::a fact can be promoted from 'semantic' to 'procedural' tier ": {
+    "statement": "A fact can be promoted from 'semantic' to 'procedural' tier based on meeting a `PROCEDURAL_THRESHOLD` confidence.",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "6aa2dea1334bfd4f859f9c2f77141ff28f427f3b"
+    ],
+    "created": "2026-04-30T03:37:18Z",
+    "last_reinforced": "2026-04-30T03:37:18Z",
+    "contradicted_by": []
+  }
+}

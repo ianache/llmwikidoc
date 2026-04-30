@@ -1,0 +1,314 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "type": "tool",
+      "description": "A tool designed to manage a project wiki by integrating with Git commits to update and consolidate knowledge.",
+      "id": "llmwikidoc"
+    },
+    {
+      "type": "concept",
+      "description": "An environment variable required for `llmwikidoc` to interact with the Gemini API.",
+      "id": "GEMINI_API_KEY"
+    },
+    {
+      "type": "concept",
+      "description": "The project knowledge base managed by the `llmwikidoc` tool.",
+      "id": "wiki"
+    },
+    {
+      "type": "concept",
+      "description": "A Git hook installed by `llmwikidoc init` to automate wiki updates on commit.",
+      "id": "hook"
+    },
+    {
+      "type": "command",
+      "description": "A command to initialize `llmwikidoc` in a git project, installing necessary hooks and creating the wiki directory.",
+      "id": "llmwikidoc init"
+    },
+    {
+      "type": "command",
+      "description": "A command (often run via a git hook) to process new code changes and update the project wiki.",
+      "id": "llmwikidoc ingest"
+    },
+    {
+      "type": "command",
+      "description": "A command to query the project wiki for information using natural language.",
+      "id": "llmwikidoc query"
+    },
+    {
+      "type": "command",
+      "description": "A command to check the current status of the `llmwikidoc` system or wiki.",
+      "id": "llmwikidoc status"
+    },
+    {
+      "type": "command",
+      "description": "A standard Git command that, when used with `llmwikidoc`, triggers the wiki update process via a hook.",
+      "id": "git commit"
+    },
+    {
+      "type": "module",
+      "description": "A new test module for the `consolidate.py` script, covering Ebbinghaus decay, tier promotion, and digest functionalities.",
+      "id": "tests/test_consolidate.py"
+    },
+    {
+      "type": "module",
+      "description": "A module responsible for consolidating wiki knowledge, including managing confidence decay and promoting facts across memory tiers.",
+      "id": "llmwikidoc.consolidate"
+    },
+    {
+      "type": "class",
+      "description": "Manages the storage and retrieval of facts and their associated confidence levels.",
+      "id": "ConfidenceStore"
+    },
+    {
+      "type": "class",
+      "description": "Represents a single verifiable statement within the wiki, including its confidence, entity, and sources.",
+      "id": "Fact"
+    },
+    {
+      "type": "concept",
+      "description": "A mechanism to model the natural decay of confidence in facts over time, similar to the forgetting curve.",
+      "id": "Ebbinghaus decay"
+    },
+    {
+      "type": "concept",
+      "description": "Categorizations for facts (working, episodic, semantic, procedural) based on their stability, number of sources, and confidence.",
+      "id": "memory tiers"
+    },
+    {
+      "type": "function",
+      "description": "Applies the Ebbinghaus decay logic to facts in the ConfidenceStore, reducing their confidence based on age.",
+      "id": "_apply_decay"
+    },
+    {
+      "type": "function",
+      "description": "Promotes facts within the ConfidenceStore by adding a 'consolidated' source marker if they meet certain criteria (age, confidence, sources).",
+      "id": "_promote_facts"
+    },
+    {
+      "type": "function",
+      "description": "Determines the current knowledge tier of a fact based on its number of sources and confidence.",
+      "id": "_fact_tier"
+    },
+    {
+      "type": "function",
+      "description": "Calculates the potential new knowledge tier for a fact or page based on its current tier, confidence, sources, and age.",
+      "id": "_compute_new_tier"
+    },
+    {
+      "type": "concept",
+      "description": "Facts that are highly stable, have numerous sources (e.g., 5+), and very high confidence (e.g., >= 0.9), resulting in slower decay.",
+      "id": "procedural facts"
+    },
+    {
+      "type": "class",
+      "description": "Stores the outcomes and metrics of a consolidation operation, such as facts decayed or promoted.",
+      "id": "ConsolidationResult"
+    },
+    {
+      "type": "file",
+      "description": "The main documentation file for the project, providing setup and usage instructions.",
+      "id": "README.md"
+    },
+    {
+      "type": "file",
+      "description": "Configuration file specifying intentionally untracked files that Git should ignore.",
+      "id": ".gitignore"
+    },
+    {
+      "type": "module",
+      "description": "A module responsible for managing confidence decay, promoting facts and pages between knowledge tiers, and creating digests within the wiki.",
+      "id": "consolidate.py"
+    },
+    {
+      "type": "class",
+      "description": "Manages the wiki structure and content.",
+      "id": "WikiManager"
+    },
+    {
+      "type": "concept",
+      "description": "The process of elevating facts or pages through different knowledge tiers (e.g., working, episodic, semantic, procedural) based on stability, age, and confidence.",
+      "id": "tier promotion"
+    },
+    {
+      "type": "concept",
+      "description": "A summarized collection of information or changes within the wiki.",
+      "id": "digest"
+    },
+    {
+      "type": "function",
+      "description": "Provides a multiplier that affects the decay rate of facts based on their current knowledge tier, with higher tiers having more stability.",
+      "id": "_tier_stability_multiplier"
+    },
+    {
+      "type": "mechanism",
+      "description": "A git hook installed by `llmwikidoc init` that automatically runs `llmwikidoc ingest` after a commit to update the wiki.",
+      "id": "git commit hook"
+    }
+  ],
+  "edges": [
+    {
+      "type": "uses",
+      "source": "llmwikidoc",
+      "target": "GEMINI_API_KEY"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc init",
+      "target": "wiki"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc init",
+      "target": "hook"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc init",
+      "target": "git commit hook"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc ingest",
+      "target": "wiki"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc ingest",
+      "target": "consolidate.py"
+    },
+    {
+      "type": "modifies",
+      "source": "llmwikidoc ingest",
+      "target": "WikiManager"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc query",
+      "target": "wiki"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc query",
+      "target": "WikiManager"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc status",
+      "target": "wiki"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc status",
+      "target": "WikiManager"
+    },
+    {
+      "type": "related_to",
+      "source": "git commit",
+      "target": "llmwikidoc ingest"
+    },
+    {
+      "type": "related_to",
+      "source": "tests/test_consolidate.py",
+      "target": "llmwikidoc.consolidate"
+    },
+    {
+      "type": "implements",
+      "source": "tests/test_consolidate.py",
+      "target": "consolidate.py"
+    },
+    {
+      "type": "uses",
+      "source": "tests/test_consolidate.py",
+      "target": "ConfidenceStore"
+    },
+    {
+      "type": "uses",
+      "source": "tests/test_consolidate.py",
+      "target": "Fact"
+    },
+    {
+      "type": "uses",
+      "source": "tests/test_consolidate.py",
+      "target": "WikiManager"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.consolidate",
+      "target": "ConfidenceStore"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.consolidate",
+      "target": "Fact"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc.consolidate",
+      "target": "ConsolidationResult"
+    },
+    {
+      "type": "modifies",
+      "source": "_apply_decay",
+      "target": "Fact"
+    },
+    {
+      "type": "modifies",
+      "source": "_apply_decay",
+      "target": "ConfidenceStore"
+    },
+    {
+      "type": "modifies",
+      "source": "_apply_decay",
+      "target": "ConsolidationResult"
+    },
+    {
+      "type": "modifies",
+      "source": "_promote_facts",
+      "target": "Fact"
+    },
+    {
+      "type": "modifies",
+      "source": "_promote_facts",
+      "target": "ConfidenceStore"
+    },
+    {
+      "type": "modifies",
+      "source": "_promote_facts",
+      "target": "ConsolidationResult"
+    },
+    {
+      "type": "uses",
+      "source": "_fact_tier",
+      "target": "Fact"
+    },
+    {
+      "type": "related_to",
+      "source": "_compute_new_tier",
+      "target": "memory tiers"
+    },
+    {
+      "type": "uses",
+      "source": "_compute_new_tier",
+      "target": "Fact"
+    },
+    {
+      "type": "related_to",
+      "source": "procedural facts",
+      "target": "memory tiers"
+    },
+    {
+      "type": "related_to",
+      "source": "README.md",
+      "target": "llmwikidoc"
+    },
+    {
+      "type": "calls",
+      "source": "git commit hook",
+      "target": "llmwikidoc ingest"
+    }
+  ]
+}
