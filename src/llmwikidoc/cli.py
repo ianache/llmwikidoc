@@ -100,10 +100,14 @@ def ingest(
         typer.Option("--sha", "-s", help="Commit SHA to ingest (defaults to HEAD)"),
     ] = None,
     quiet: Annotated[bool, typer.Option("--quiet", "-q")] = False,
+    all_commits: Annotated[
+        bool,
+        typer.Option("--all", help="Ingest all commits in history, excluding wiki/ content"),
+    ] = False,
 ) -> None:
     """Ingest a commit and update the wiki."""
     from llmwikidoc import config as cfg_module
-    from llmwikidoc.ingest import ingest_commit
+    from llmwikidoc.ingest import SkippedCommit, ingest_commit
 
     try:
         config = cfg_module.load()
@@ -111,11 +115,22 @@ def ingest(
         err_console.print(f"[red]Config error:[/] {exc}")
         raise typer.Exit(1)
 
+    wiki_prefix = config.wiki_dir.rstrip("/") + "/"
+    exclude = [wiki_prefix]
+
+    if all_commits:
+        _ingest_all(config, exclude, quiet)
+        return
+
     if not quiet:
         console.print(f"[cyan]Ingesting commit...[/] (model: {config.model})")
 
     try:
-        result = ingest_commit(config, sha=sha)
+        result = ingest_commit(config, sha=sha, exclude_prefixes=exclude)
+    except SkippedCommit as exc:
+        if not quiet:
+            console.print(f"[yellow]Skipped:[/] {exc}")
+        return
     except EnvironmentError as exc:
         err_console.print(f"[red]Error:[/] {exc}")
         raise typer.Exit(1)
@@ -126,6 +141,63 @@ def ingest(
     if quiet:
         return
 
+    _print_ingest_result(result)
+
+
+def _ingest_all(config: object, exclude: list[str], quiet: bool) -> None:
+    import git as _git
+    from llmwikidoc.ingest import SkippedCommit, ingest_commit
+    from llmwikidoc.wiki import WikiManager
+
+    repo = _git.Repo(str(config.project_root))
+    all_shas = [c.hexsha for c in repo.iter_commits(reverse=True)]
+
+    # Determine already-ingested SHAs from existing summaries
+    wiki = WikiManager(config.wiki_path)
+    ingested = {p.stem for p in (config.wiki_path / "summaries").glob("*.md")} if (config.wiki_path / "summaries").exists() else set()
+
+    pending = [s for s in all_shas if s[:8] not in ingested]
+
+    if not pending:
+        console.print("[green]All commits already ingested.[/]")
+        return
+
+    console.print(f"[cyan]Ingesting {len(pending)} commit(s) (skipping {len(ingested)} already done)...[/]")
+
+    total_created = total_updated = total_facts = skipped = errors = 0
+
+    for i, commit_sha in enumerate(pending, 1):
+        short = commit_sha[:8]
+        if not quiet:
+            console.print(f"  [{i}/{len(pending)}] {short}", end=" ")
+        try:
+            result = ingest_commit(config, sha=commit_sha, exclude_prefixes=exclude)
+            total_created += len(result.pages_created)
+            total_updated += len(result.pages_updated)
+            total_facts += result.facts_added
+            if not quiet:
+                console.print(f"[green]✓[/] +{len(result.pages_created)}p {result.facts_added}f")
+        except SkippedCommit:
+            skipped += 1
+            if not quiet:
+                console.print("[dim]skipped (wiki-only)[/]")
+        except Exception as exc:
+            errors += 1
+            if not quiet:
+                console.print(f"[red]error:[/] {exc}")
+
+    table = Table(show_header=False, box=None, padding=(0, 1))
+    table.add_row("[green]Commits processed[/]", str(len(pending) - skipped - errors))
+    table.add_row("[dim]Skipped (wiki-only)[/]", str(skipped))
+    table.add_row("[green]Pages created[/]", str(total_created))
+    table.add_row("[green]Pages updated[/]", str(total_updated))
+    table.add_row("[green]Facts added[/]", str(total_facts))
+    if errors:
+        table.add_row("[red]Errors[/]", str(errors))
+    console.print(Panel(table, title="Ingest all — complete", border_style="green"))
+
+
+def _print_ingest_result(result: object) -> None:
     table = Table(show_header=False, box=None, padding=(0, 1))
     table.add_row("[green]Commit[/]", result.short_sha)
     table.add_row("[green]Pages created[/]", str(len(result.pages_created)))

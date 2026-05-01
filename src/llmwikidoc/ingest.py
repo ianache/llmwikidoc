@@ -27,9 +27,14 @@ class IngestResult:
     errors: list[str]
 
 
+class SkippedCommit(Exception):
+    """Raised when a commit has no relevant changes after filtering."""
+
+
 def ingest_commit(
     config: Config,
     sha: str | None = None,
+    exclude_prefixes: list[str] | None = None,
 ) -> IngestResult:
     """
     Full pipeline: read commit → extract with Gemini → update wiki.
@@ -37,11 +42,23 @@ def ingest_commit(
     Args:
         config: Project configuration.
         sha: Commit SHA to ingest. Defaults to HEAD.
+        exclude_prefixes: File path prefixes to ignore (e.g. ["wiki/"]).
+
+    Raises:
+        SkippedCommit: If all changed files were excluded (nothing to ingest).
     """
     errors: list[str] = []
 
     # 1. Read commit context
-    ctx = read_commit(config.project_root, sha=sha, context_depth=config.context_depth)
+    ctx = read_commit(
+        config.project_root,
+        sha=sha,
+        context_depth=config.context_depth,
+        exclude_prefixes=exclude_prefixes,
+    )
+
+    if not ctx.changed_files:
+        raise SkippedCommit(f"No relevant files in commit {ctx.short_sha} after filtering")
 
     # 2. Build prompt and call Gemini
     with LLMClient(config) as llm:

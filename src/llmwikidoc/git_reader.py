@@ -27,6 +27,7 @@ def read_commit(
     repo_path: Path,
     sha: str | None = None,
     context_depth: int = 2,
+    exclude_prefixes: list[str] | None = None,
 ) -> CommitContext:
     """
     Read a commit and gather full context.
@@ -35,6 +36,7 @@ def read_commit(
         repo_path: Root of the git repository.
         sha: Commit SHA to read. Defaults to HEAD.
         context_depth: How many levels of related files to follow (imports, callers).
+        exclude_prefixes: File path prefixes to ignore (e.g. ["wiki/"]).
     """
     repo = git.Repo(str(repo_path))
     commit = repo.commit(sha) if sha else repo.head.commit
@@ -44,6 +46,11 @@ def read_commit(
     message = commit.message.strip()
     author = f"{commit.author.name} <{commit.author.email}>"
     timestamp = commit.authored_datetime.isoformat()
+
+    _exclude = tuple(exclude_prefixes) if exclude_prefixes else ()
+
+    def _is_excluded(path: str) -> bool:
+        return bool(_exclude) and any(path.startswith(p) for p in _exclude)
 
     # Diff
     if commit.parents:
@@ -59,14 +66,15 @@ def read_commit(
     stats: dict[str, dict[str, int]] = {}
     for d in raw_diffs:
         path = d.b_path or d.a_path
-        if path:
+        if path and not _is_excluded(path):
             changed_files.append(path)
 
     for path, file_stats in commit.stats.files.items():
-        stats[path] = {
-            "insertions": file_stats.get("insertions", 0),
-            "deletions": file_stats.get("deletions", 0),
-        }
+        if not _is_excluded(path):
+            stats[path] = {
+                "insertions": file_stats.get("insertions", 0),
+                "deletions": file_stats.get("deletions", 0),
+            }
 
     # Full content of modified files (at HEAD state)
     file_contents: dict[str, str] = {}
