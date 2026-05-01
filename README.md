@@ -10,6 +10,20 @@ o
 
 ```
 $env:GEMINI_API_KEY=""
+```
+
+Se requiere tener instalado Python version 3.13 o superior y ser la version activa. Para ello, en Windows debes ejecutar el siguiente comando en `Power Shell` 
+```
+winget install Python.Python.3.14
+```
+
+Luego se debe instalar el Wheel a través del siguiente comando:
+
+```
+python -m pip install https://github.com/ianache/llmwikidoc/releases/download/v0.1.0/llmwikidoc-0.1.0-py3-none-any.whl
+```
+
+> Alternativa: descargar el ejecutable para Windows
 
 ```
 llmwikidoc init       # instala hook + crea wiki/
