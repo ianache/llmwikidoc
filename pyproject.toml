@@ -1,6 +1,6 @@
 [project]
 name = "llmwikidoc"
-version = "0.1.0"
+version = "0.2.0"
 description = "LLM-powered wiki that auto-updates from git commits (Karpathy LLM Wiki pattern)"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -31,6 +31,7 @@ testpaths = ["tests"]
 [dependency-groups]
 dev = [
     "hatchling>=1.29.0",
+    "pyinstaller>=6.20.0",
     "pytest>=9.0.3",
     "pytest-mock>=3.15.1",
 ]
