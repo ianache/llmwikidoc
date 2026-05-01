@@ -217,6 +217,79 @@ def _print_ingest_result(result: object) -> None:
         console.print("[dim]Updated:[/] " + ", ".join(result.pages_updated[:5]))
 
 
+# ── ingestall ────────────────────────────────────────────────────────────────
+
+@app.command()
+def ingestall(
+    dry_run: Annotated[
+        bool,
+        typer.Option("--dry-run", help="Show which files would be processed without calling the LLM"),
+    ] = False,
+) -> None:
+    """Scan all project files (excluding wiki/) and update the wiki from their current state."""
+    from llmwikidoc import config as cfg_module
+    from llmwikidoc.ingest_files import SUPPORTED_EXTENSIONS, ingest_all_files, scan_files, _batch_files
+
+    try:
+        config = cfg_module.load()
+    except Exception as exc:
+        err_console.print(f"[red]Config error:[/] {exc}")
+        raise typer.Exit(1)
+
+    extra_excludes = {config.wiki_dir, config.wiki_dir.rstrip("/")}
+    files = scan_files(config.project_root, extra_excludes=extra_excludes)
+
+    if not files:
+        console.print("[yellow]No processable files found.[/]")
+        raise typer.Exit(0)
+
+    if dry_run:
+        console.print(f"[cyan]Would process {len(files)} file(s):[/]")
+        for f in files:
+            rel = f.relative_to(config.project_root)
+            console.print(f"  [dim]{rel}[/]")
+        batches = _batch_files(files, config.project_root)
+        console.print(f"\n[cyan]Grouped into {len(batches)} batch(es) (<=10 000 chars each)[/]")
+        console.print(f"[dim]Supported extensions: {', '.join(sorted(SUPPORTED_EXTENSIONS))}[/]")
+        return
+
+    console.print(
+        f"[cyan]Ingesting {len(files)} file(s) from project...[/] (model: {config.model})"
+    )
+
+    try:
+        result = ingest_all_files(config)
+    except EnvironmentError as exc:
+        err_console.print(f"[red]Error:[/] {exc}")
+        raise typer.Exit(1)
+    except Exception as exc:
+        err_console.print(f"[red]Ingestall failed:[/] {exc}")
+        raise typer.Exit(1)
+
+    table = Table(show_header=False, box=None, padding=(0, 1))
+    table.add_row("[green]Snapshot ID[/]", result.snapshot_id)
+    table.add_row("[green]Files processed[/]", str(result.files_processed))
+    table.add_row("[green]Batches[/]", str(result.batches))
+    table.add_row("[green]Pages created[/]", str(len(result.pages_created)))
+    table.add_row("[green]Pages updated[/]", str(len(result.pages_updated)))
+    table.add_row("[green]Entities found[/]", str(result.entities_found))
+    table.add_row("[green]Facts added[/]", str(result.facts_added))
+    if result.files_skipped:
+        table.add_row("[yellow]Files skipped (errors)[/]", str(result.files_skipped))
+    if result.errors:
+        table.add_row("[red]Batch errors[/]", str(len(result.errors)))
+
+    console.print(Panel(table, title=f"Ingestall complete — {result.snapshot_id}", border_style="green"))
+
+    if result.pages_created:
+        console.print("[dim]Created:[/] " + ", ".join(result.pages_created[:5]))
+    if result.pages_updated:
+        console.print("[dim]Updated:[/] " + ", ".join(result.pages_updated[:5]))
+    if result.errors:
+        for err in result.errors[:3]:
+            console.print(f"  [red]✗[/] {err}")
+
+
 # ── query ─────────────────────────────────────────────────────────────────────
 
 @app.command()
