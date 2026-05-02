@@ -4,18 +4,18 @@
   "graph": {},
   "nodes": [
     {
-      "type": "tool",
-      "description": "A tool designed to manage a project wiki by integrating with Git commits to update and consolidate knowledge.",
+      "type": "module",
+      "description": "The primary package for an LLM-powered wiki designed to be auto-updated from git commit history.",
       "id": "llmwikidoc"
     },
     {
       "type": "concept",
-      "description": "An environment variable required for `llmwikidoc` to interact with the Gemini API.",
+      "description": "An environment variable that must be set with a valid key for the Google GenAI service to enable the LLM functionalities of llmwikidoc.",
       "id": "GEMINI_API_KEY"
     },
     {
-      "type": "concept",
-      "description": "The project knowledge base managed by the `llmwikidoc` tool.",
+      "type": "module",
+      "description": "Manages the creation, updating, and organization of markdown wiki files and structure.",
       "id": "wiki"
     },
     {
@@ -24,53 +24,53 @@
       "id": "hook"
     },
     {
-      "type": "command",
-      "description": "A command to initialize `llmwikidoc` in a git project, installing necessary hooks and creating the wiki directory.",
+      "type": "function",
+      "description": "CLI command to initialize the wiki directory, install the Git hook, and create the config file.",
       "id": "llmwikidoc init"
     },
     {
-      "type": "command",
-      "description": "A command (often run via a git hook) to process new code changes and update the project wiki.",
+      "type": "function",
+      "description": "CLI command to manually trigger the ingestion pipeline for the latest commit.",
       "id": "llmwikidoc ingest"
     },
     {
-      "type": "command",
-      "description": "A command to query the project wiki for information using natural language.",
+      "type": "function",
+      "description": "CLI command to query the wiki using natural language, leveraging hybrid search and LLMs.",
       "id": "llmwikidoc query"
     },
     {
-      "type": "command",
-      "description": "A command to check the current status of the `llmwikidoc` system or wiki.",
+      "type": "function",
+      "description": "CLI command to display various statistics about the current state of the wiki.",
       "id": "llmwikidoc status"
     },
     {
-      "type": "command",
-      "description": "A standard Git command that, when used with `llmwikidoc`, triggers the wiki update process via a hook.",
+      "type": "concept",
+      "description": "A record of changes to the codebase, serving as the primary input for the ingestion pipeline.",
       "id": "git commit"
     },
     {
       "type": "module",
-      "description": "A new test module for the `consolidate.py` script, covering Ebbinghaus decay, tier promotion, and digest functionalities.",
+      "description": "The test suite for the `llmwikidoc.consolidate` module, covering Ebbinghaus decay, fact promotion, page promotion, and digest creation.",
       "id": "tests/test_consolidate.py"
     },
     {
       "type": "module",
-      "description": "A module responsible for consolidating wiki knowledge, including managing confidence decay and promoting facts across memory tiers.",
+      "description": "The module responsible for implementing the memory lifecycle, including Ebbinghaus decay, fact promotion, and page tier consolidation.",
       "id": "llmwikidoc.consolidate"
     },
     {
       "type": "class",
-      "description": "Manages the storage and retrieval of facts and their associated confidence levels.",
+      "description": "A class managing the storage, retrieval, and manipulation of Fact objects, including their confidence scores and sources.",
       "id": "ConfidenceStore"
     },
     {
       "type": "class",
-      "description": "Represents a single verifiable statement within the wiki, including its confidence, entity, and sources.",
+      "description": "Represents a single verifiable fact within the wiki, including its statement, associated entity, confidence score, and contributing sources.",
       "id": "Fact"
     },
     {
       "type": "concept",
-      "description": "A mechanism to model the natural decay of confidence in facts over time, similar to the forgetting curve.",
+      "description": "A memory decay model applied to fact confidence, where confidence decreases over time if not reinforced, simulating human forgetting curves.",
       "id": "Ebbinghaus decay"
     },
     {
@@ -80,22 +80,22 @@
     },
     {
       "type": "function",
-      "description": "Applies the Ebbinghaus decay logic to facts in the ConfidenceStore, reducing their confidence based on age.",
+      "description": "Applies the Ebbinghaus decay algorithm to facts within the ConfidenceStore, reducing their confidence based on their age and tier stability.",
       "id": "_apply_decay"
     },
     {
       "type": "function",
-      "description": "Promotes facts within the ConfidenceStore by adding a 'consolidated' source marker if they meet certain criteria (age, confidence, sources).",
+      "description": "Evaluates facts for promotion based on criteria like age, confidence, and number of sources, marking eligible facts with a 'consolidated' source.",
       "id": "_promote_facts"
     },
     {
       "type": "function",
-      "description": "Determines the current knowledge tier of a fact based on its number of sources and confidence.",
+      "description": "Determines the current tier ('working', 'episodic', 'semantic', 'procedural') of a given Fact object based on its number of sources and confidence.",
       "id": "_fact_tier"
     },
     {
       "type": "function",
-      "description": "Calculates the potential new knowledge tier for a fact or page based on its current tier, confidence, sources, and age.",
+      "description": "Calculates the target tier for a fact or page given its current tier, confidence, source count, and age, applying the promotion rules.",
       "id": "_compute_new_tier"
     },
     {
@@ -105,7 +105,7 @@
     },
     {
       "type": "class",
-      "description": "Stores the outcomes and metrics of a consolidation operation, such as facts decayed or promoted.",
+      "description": "A data class that aggregates the results of a consolidation run, tracking metrics such as decayed facts, promoted facts, and promoted pages.",
       "id": "ConsolidationResult"
     },
     {
@@ -125,7 +125,7 @@
     },
     {
       "type": "class",
-      "description": "Manages the wiki structure and content.",
+      "description": "A class responsible for managing the wiki's pages, including creation, updates, and interactions with the underlying file system.",
       "id": "WikiManager"
     },
     {
@@ -140,20 +140,1200 @@
     },
     {
       "type": "function",
-      "description": "Provides a multiplier that affects the decay rate of facts based on their current knowledge tier, with higher tiers having more stability.",
+      "description": "Returns a multiplier that indicates how resistant a fact's confidence decay should be, with higher tiers having greater stability.",
       "id": "_tier_stability_multiplier"
     },
     {
       "type": "mechanism",
       "description": "A git hook installed by `llmwikidoc init` that automatically runs `llmwikidoc ingest` after a commit to update the wiki.",
       "id": "git commit hook"
+    },
+    {
+      "type": "concept",
+      "description": "The TOML-formatted configuration file used to persist project settings for llmwikidoc.",
+      "id": ".llmwikidoc.toml"
+    },
+    {
+      "type": "module",
+      "description": "A Markdown file providing guidance, project status, name, workflow rules, and tooling information specifically for Claude Code.",
+      "id": "CLAUDE.md"
+    },
+    {
+      "type": "module",
+      "description": "The main Python script for the project, containing a simple entry point function.",
+      "id": "main.py"
+    },
+    {
+      "type": "function",
+      "description": "The primary function in main.py, which prints a greeting message.",
+      "id": "main"
+    },
+    {
+      "type": "concept",
+      "description": "The default large language model chosen for its balance of cost and quality for high-volume commits.",
+      "id": "gemini-2.5-flash"
+    },
+    {
+      "type": "concept",
+      "description": "A configuration parameter specifying the output directory for the generated wiki.",
+      "id": "wiki_dir"
+    },
+    {
+      "type": "concept",
+      "description": "A configuration parameter defining the depth of context for the LLM.",
+      "id": "context_depth"
+    },
+    {
+      "type": "concept",
+      "description": "A set of configuration parameters defining the initial, reinforcement, contradiction, and decay rates for confidence scores.",
+      "id": "confidence settings"
+    },
+    {
+      "type": "concept",
+      "description": "A set of configuration parameters defining the weighting for different search components (BM25, vector, graph).",
+      "id": "search weights"
+    },
+    {
+      "type": "concept",
+      "description": "A semantic code knowledge graph tool that is initialized and will index source files in the repository.",
+      "id": "CodeGraph"
+    },
+    {
+      "type": "decision",
+      "description": "A section in CLAUDE.md that describes the current development stage of the project.",
+      "id": "Project Status"
+    },
+    {
+      "type": "decision",
+      "description": "A set of guidelines in CLAUDE.md for developers, emphasizing planning, clarity, and verification.",
+      "id": "Workflow Rules"
+    },
+    {
+      "type": "module",
+      "description": "The main command-line interface module, handling user interactions and commands.",
+      "id": "cli"
+    },
+    {
+      "type": "module",
+      "description": "Module responsible for loading, defining, and managing the project's configuration settings, including paths, LLM model, and specific parameters for confidence and search.",
+      "id": "config"
+    },
+    {
+      "type": "module",
+      "description": "Extracts detailed context and data from Git commits.",
+      "id": "git_reader"
+    },
+    {
+      "type": "function",
+      "description": "A Typer command to process and ingest a specific git commit (or HEAD by default) or all historical commits into the wiki, extracting and storing relevant information.",
+      "id": "ingest"
+    },
+    {
+      "type": "module",
+      "description": "Provides an interface for interacting with the Gemini LLM for content extraction and generation.",
+      "id": "llm"
+    },
+    {
+      "type": "module",
+      "description": "Manages the project's knowledge graph, including adding nodes and edges.",
+      "id": "graph"
+    },
+    {
+      "type": "module",
+      "description": "Module responsible for managing the confidence scores of facts, including their creation, reinforcement, decay, and contradiction.",
+      "id": "confidence"
+    },
+    {
+      "type": "module",
+      "description": "Implements the hybrid search functionality for querying the wiki.",
+      "id": "search"
+    },
+    {
+      "type": "module",
+      "description": "Performs health checks, detects contradictions, and identifies issues in the wiki.",
+      "id": "lint"
+    },
+    {
+      "type": "concept",
+      "description": "A Git hook template that automatically triggers the llmwikidoc ingestion process after a commit.",
+      "id": "post-commit"
+    },
+    {
+      "type": "function",
+      "description": "CLI command to run health checks and detect inconsistencies in the wiki content.",
+      "id": "llmwikidoc lint"
+    },
+    {
+      "type": "concept",
+      "description": "The conceptual framework for structuring the wiki, extended to version 2.",
+      "id": "LLM Wiki Pattern"
+    },
+    {
+      "type": "concept",
+      "description": "A structured representation of entities and their relationships within the project context.",
+      "id": "Knowledge Graph"
+    },
+    {
+      "type": "concept",
+      "description": "A search methodology combining BM25, vector embeddings, and graph traversal for comprehensive results.",
+      "id": "Hybrid Search"
+    },
+    {
+      "type": "concept",
+      "description": "A system to assign and update reliability scores to facts extracted and stored in the wiki.",
+      "id": "Confidence Scoring"
+    },
+    {
+      "type": "concept",
+      "description": "An algorithm used to combine multiple ranked lists into a single, more robust ranked list by summing reciprocal ranks, which is the core fusion mechanism in `HybridSearch`.",
+      "id": "Reciprocal Rank Fusion"
+    },
+    {
+      "type": "concept",
+      "description": "A memory management strategy involving progressive compression of wiki content through different tiers (Working, Episodic, Semantic, Procedural).",
+      "id": "Consolidation Tiers"
+    },
+    {
+      "type": "concept",
+      "description": "A mechanism based on Ebbinghaus's forgetting curve, where fact confidence scores decrease over time unless reinforced.",
+      "id": "Retention Decay"
+    },
+    {
+      "type": "concept",
+      "description": "The process of generating structured summaries from N commits, creating new knowledge sources.",
+      "id": "Session Crystallization"
+    },
+    {
+      "type": "concept",
+      "description": "YAML metadata embedded at the top of markdown wiki pages to store structured information like type, confidence, and sources.",
+      "id": "Markdown Frontmatter"
+    },
+    {
+      "type": "decision",
+      "description": "A design decision ensuring that the 'post-commit' Git hook will not block the commit process if 'llmwikidoc ingest' fails.",
+      "id": "Post-commit Non-blocking"
+    },
+    {
+      "type": "decision",
+      "description": "A design decision to use 'response_mime_type=\"application/json\"' with Gemini for structured and reliable output parsing.",
+      "id": "JSON LLM Output"
+    },
+    {
+      "type": "decision",
+      "description": "A design decision to cache generated vector embeddings, recalculating them only when page content changes to optimize performance.",
+      "id": "Cached Embeddings"
+    },
+    {
+      "type": "decision",
+      "description": "A design decision to store the 'wiki/' directory directly within the documented project's Git repository.",
+      "id": "In-repo Wiki"
+    },
+    {
+      "type": "decision",
+      "description": "A design decision to manage the GEMINI_API_KEY via environment variables, rather than storing it in the configuration file.",
+      "id": "Environment Variable API Key"
+    },
+    {
+      "type": "module",
+      "description": "A Python library for building command-line applications, used for llmwikidoc's CLI.",
+      "id": "typer"
+    },
+    {
+      "type": "module",
+      "description": "A Python library for adding rich text and beautiful formatting to terminal output.",
+      "id": "rich"
+    },
+    {
+      "type": "module",
+      "description": "A Python library for integrating with Google's Generative AI models.",
+      "id": "google-genai"
+    },
+    {
+      "type": "module",
+      "description": "A Python library providing an API for interacting with Git repositories.",
+      "id": "gitpython"
+    },
+    {
+      "type": "concept",
+      "description": "A Python library used by KnowledgeGraph for the creation, manipulation, and study of graph structures.",
+      "id": "networkx"
+    },
+    {
+      "type": "module",
+      "description": "A Python library providing an implementation of the BM25 ranking function, likely used for search or relevance scoring.",
+      "id": "rank-bm25"
+    },
+    {
+      "type": "module",
+      "description": "A Python library for parsing TOML files.",
+      "id": "tomli"
+    },
+    {
+      "type": "concept",
+      "description": "A standard library module (Python 3.11+) for parsing TOML files.",
+      "id": "tomllib"
+    },
+    {
+      "type": "module",
+      "description": "A popular testing framework for Python, used here to define and run unit tests for the consolidation logic.",
+      "id": "pytest"
+    },
+    {
+      "type": "module",
+      "description": "A development dependency that provides mocking utilities for pytest tests.",
+      "id": "pytest-mock"
+    },
+    {
+      "type": "concept",
+      "description": "The embedding model used for generating vector representations of text for search.",
+      "id": "gemini-embedding-001"
+    },
+    {
+      "type": "concept",
+      "description": "The directory created by `llmwikidoc init` where the generated and updated wiki content is stored.",
+      "id": "wiki/"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "contradictions"
+    },
+    {
+      "type": "concept",
+      "description": "The programming language runtime required for executing the llmwikidoc application.",
+      "id": "Python"
+    },
+    {
+      "type": "concept",
+      "description": "A script installed by the `llmwikidoc init` command that triggers wiki updates upon git commits.",
+      "id": "git hook"
+    },
+    {
+      "type": "tool",
+      "description": "A Python package installer and manager, recommended for installing llmwikidoc globally or for running commands within a project's virtual environment.",
+      "id": "uv"
+    },
+    {
+      "type": "tool",
+      "description": "The Windows Package Manager used to install Python on Windows systems.",
+      "id": "winget"
+    },
+    {
+      "type": "tool",
+      "description": "The build backend used for packaging the llmwikidoc project.",
+      "id": "hatchling"
+    },
+    {
+      "type": "module",
+      "description": "A Python library for writing TOML files.",
+      "id": "tomli-w"
+    },
+    {
+      "type": "tool",
+      "description": "A development dependency used to bundle Python applications into standalone executables, particularly for Windows.",
+      "id": "pyinstaller"
+    },
+    {
+      "type": "concept",
+      "description": "A mock entity frequently used in tests to represent a service responsible for user authentication.",
+      "id": "UserService"
+    },
+    {
+      "type": "concept",
+      "description": "A string constant representing the current semantic version of the `llmwikidoc` package.",
+      "id": "__version__"
+    },
+    {
+      "type": "module",
+      "description": "The main module for the llmwikidoc command-line interface, orchestrating various subcommands for wiki management and acting as the CLI entry point.",
+      "id": "llmwikidoc.cli"
+    },
+    {
+      "type": "object",
+      "description": "The central Typer application instance for the llmwikidoc CLI, configuring its name, help message, and managing subcommand registration.",
+      "id": "app"
+    },
+    {
+      "type": "function",
+      "description": "A Typer command to initialize the llmwikidoc project within a git repository by creating the wiki directory, writing a default configuration, and installing a post-commit git hook.",
+      "id": "init"
+    },
+    {
+      "type": "function",
+      "description": "A helper function responsible for installing or updating the 'post-commit' git hook in the project's .git/hooks directory, ensuring the wiki auto-updates after each commit.",
+      "id": "_install_hook"
+    },
+    {
+      "type": "function",
+      "description": "Generates the shell script content for the 'post-commit' git hook, which triggers the llmwikidoc ingest command in the background.",
+      "id": "_hook_script"
+    },
+    {
+      "type": "function",
+      "description": "A helper function used by the 'ingest --all' command to iterate through all past git commits, check for already ingested summaries, and process pending commits to update the wiki.",
+      "id": "_ingest_all"
+    },
+    {
+      "type": "function",
+      "description": "A helper function that displays a formatted summary of the results after a single commit ingestion operation, utilizing `rich.Table` and `rich.Panel` for clear output.",
+      "id": "_print_ingest_result"
+    },
+    {
+      "type": "function",
+      "description": "A Typer command that scans all supported project files (excluding the wiki directory) and ingests their current content into the wiki, effectively creating a knowledge snapshot from the codebase's current state.",
+      "id": "ingestall"
+    },
+    {
+      "type": "concept",
+      "description": "The designated starting point for command-line execution of the llmwikidoc application, managed by the `app` Typer instance and its defined commands.",
+      "id": "CLI Entry Point"
+    },
+    {
+      "type": "concept",
+      "description": "A mechanism within Git that automatically executes a script (like `llmwikidoc ingest`) after a successful `git commit`, enabling automatic wiki updates.",
+      "id": "Git Post-Commit Hook"
+    },
+    {
+      "type": "concept",
+      "description": "The setup process for the llmwikidoc wiki within a project, involving creating the wiki directory, generating a configuration file, and installing the necessary git hook.",
+      "id": "Wiki Initialization"
+    },
+    {
+      "type": "concept",
+      "description": "The automated process of analyzing changes in a git commit, extracting relevant information (entities, facts), and updating the project wiki with new or revised content.",
+      "id": "Commit Ingestion"
+    },
+    {
+      "type": "concept",
+      "description": "The process of scanning and analyzing the current state of all specified project source files to update or create wiki content based on their current contents, distinct from commit-based ingestion.",
+      "id": "File Ingestion"
+    },
+    {
+      "type": "concept",
+      "description": "The handling of project-specific settings and parameters for llmwikidoc, including loading and writing configurations via the `llmwikidoc.config` module.",
+      "id": "Configuration Management"
+    },
+    {
+      "type": "concept",
+      "description": "The mechanism for displaying rich-formatted text, tables, and panels to the user via standard output and standard error, using the `rich` library for enhanced user experience.",
+      "id": "Console Output"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "rich.console"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "rich.panel"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "rich.table"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "llmwikidoc.config"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "llmwikidoc.wiki.WikiManager"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "llmwikidoc.ingest.ingest_commit"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "git.Repo"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "llmwikidoc.ingest_files.scan_files"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "llmwikidoc.ingest_files._batch_files"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "llmwikidoc.ingest_files.ingest_all_files"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "llmwikidoc.ingest_files.SUPPORTED_EXTENSIONS"
+    },
+    {
+      "type": "function",
+      "description": "A utility function to generate a unique string key for a fact based on its entity and statement.",
+      "id": "_fact_key"
+    },
+    {
+      "type": "function",
+      "description": "Generates the current UTC datetime formatted as an ISO 8601 string (e.g., 'YYYY-MM-DDTHH:MM:SSZ'), primarily used for timestamping wiki page metadata.",
+      "id": "_now_iso"
+    },
+    {
+      "type": "class",
+      "description": "A configuration class specifically for confidence-related settings within the LLMWikiDoc project.",
+      "id": "ConfidenceConfig"
+    },
+    {
+      "type": "class",
+      "description": "A dataclass holding parameters that define the weighting for different search components (e.g., BM25, vector, graph).",
+      "id": "SearchConfig"
+    },
+    {
+      "type": "class",
+      "description": "A configuration class for the LLMWikiDoc project, managing various project-wide settings.",
+      "id": "Config"
+    },
+    {
+      "type": "function",
+      "description": "Loads the project configuration from a '.llmwikidoc.toml' file located within the project root.",
+      "id": "load"
+    },
+    {
+      "type": "function",
+      "description": "Writes a default project configuration file, '.llmwikidoc.toml', to a specified project root.",
+      "id": "write_default"
+    },
+    {
+      "type": "function",
+      "description": "Identifies the root directory of a project by searching for a '.git' folder in the current or parent directories.",
+      "id": "_find_project_root"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "Config.api_key"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "os.environ"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "ConfidenceStore.save"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "Fact.to_dict"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "ConfidenceStore._load"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "Fact.from_dict"
+    },
+    {
+      "type": "concept",
+      "description": "A system of information retention levels: working, episodic, semantic, and procedural, defining how long and in what form information is stored.",
+      "id": "Consolidation tiers"
+    },
+    {
+      "type": "concept",
+      "description": "A simplified model for the forgetting curve, applied to facts to decrease their confidence over time based on an exponential decay formula.",
+      "id": "Ebbinghaus retention decay"
+    },
+    {
+      "type": "concept",
+      "description": "The overarching process by which facts and wiki pages transition through different consolidation tiers from short-term to long-term memory.",
+      "id": "Memory lifecycle"
+    },
+    {
+      "type": "class",
+      "description": "A data class that encapsulates the structured output of the `create_digest` function, summarizing a period of changes.",
+      "id": "DigestResult"
+    },
+    {
+      "type": "function",
+      "description": "Orchestrates the entire consolidation process, invoking decay, fact promotion, and page promotion, and saving the updated ConfidenceStore.",
+      "id": "run_consolidation"
+    },
+    {
+      "type": "function",
+      "description": "Analyzes wiki pages and their associated facts to determine if the page's tier should be promoted (e.g., from 'working' to 'episodic') based on aggregated confidence and age.",
+      "id": "_promote_pages"
+    },
+    {
+      "type": "function",
+      "description": "Utilizes an LLM to compress the body of a WikiPage when it is promoted to a higher consolidation tier (semantic or procedural).",
+      "id": "_compress_page"
+    },
+    {
+      "type": "function",
+      "description": "Generates a structured summary or 'digest' of recent changes, facts, and open questions based on the wiki's current state.",
+      "id": "create_digest"
+    },
+    {
+      "type": "concept",
+      "description": "The initial, high-volume, low-compression consolidation tier for facts from recent commits, with a stability multiplier of 1.0 for decay.",
+      "id": "working"
+    },
+    {
+      "type": "concept",
+      "description": "The second consolidation tier for summaries of sessions/sprints, with moderate compression and a stability multiplier of 2.0 for decay.",
+      "id": "episodic"
+    },
+    {
+      "type": "concept",
+      "description": "The third consolidation tier for distilled concepts across episodes, with high compression and a stability multiplier of 4.0 for decay.",
+      "id": "semantic"
+    },
+    {
+      "type": "concept",
+      "description": "The final consolidation tier for stable, high-confidence patterns, considered permanent, with a stability multiplier of 10.0 for decay.",
+      "id": "procedural"
+    },
+    {
+      "type": "class",
+      "description": "Represents a client interface for interacting with a Large Language Model, used for structured data extraction.",
+      "id": "LLMClient"
+    },
+    {
+      "type": "class",
+      "description": "Represents a single page within the wiki, holding its content, frontmatter metadata, and file path.",
+      "id": "WikiPage"
+    },
+    {
+      "type": "module",
+      "description": "Module responsible for defining the KnowledgeGraph data structure and its associated operations for managing project entities and their relationships.",
+      "id": "llmwikidoc.graph"
+    },
+    {
+      "type": "class",
+      "description": "A class representing a graph database for storing and managing project entities and their relationships, supporting persistence and queries.",
+      "id": "KnowledgeGraph"
+    },
+    {
+      "type": "concept",
+      "description": "A predefined set of valid strings representing the permissible types of relationships (edges) that can exist between entities in the KnowledgeGraph.",
+      "id": "VALID_RELATION_TYPES"
+    },
+    {
+      "type": "function",
+      "description": "Initializes a KnowledgeGraph instance, setting up its file path and loading existing graph data from storage if the file exists.",
+      "id": "KnowledgeGraph.__init__"
+    },
+    {
+      "type": "function",
+      "description": "Adds a new entity node to the graph or updates the type and description attributes of an existing entity.",
+      "id": "KnowledgeGraph.add_entity"
+    },
+    {
+      "type": "function",
+      "description": "Adds a typed, directed edge between two entities, ensuring both entities exist in the graph and validating the provided relation type.",
+      "id": "KnowledgeGraph.add_relation"
+    },
+    {
+      "type": "function",
+      "description": "Returns a list of entities directly connected from a given entity, with an optional filter for specific relation types.",
+      "id": "KnowledgeGraph.neighbors"
+    },
+    {
+      "type": "function",
+      "description": "Returns a list of entities that have incoming edges to the specified entity, indicating a dependency relationship.",
+      "id": "KnowledgeGraph.dependents"
+    },
+    {
+      "type": "function",
+      "description": "Finds the shortest path between two specified entities within the graph using NetworkX's pathfinding capabilities.",
+      "id": "KnowledgeGraph.find_path"
+    },
+    {
+      "type": "function",
+      "description": "Retrieves comprehensive information for a given entity, including its attributes and summaries of its incoming and outgoing relationships.",
+      "id": "KnowledgeGraph.entity_info"
+    },
+    {
+      "type": "function",
+      "description": "Searches for and returns entity names that contain a specified query string, performing a case-insensitive match.",
+      "id": "KnowledgeGraph.search_entities"
+    },
+    {
+      "type": "function",
+      "description": "A property that returns the total number of entity nodes currently stored in the graph.",
+      "id": "KnowledgeGraph.node_count"
+    },
+    {
+      "type": "function",
+      "description": "A property that returns the total number of relationship edges currently stored in the graph.",
+      "id": "KnowledgeGraph.edge_count"
+    },
+    {
+      "type": "function",
+      "description": "Persists the current state of the graph to its designated file path, serializing the graph into JSON format.",
+      "id": "KnowledgeGraph.save"
+    },
+    {
+      "type": "function",
+      "description": "Internal method to load the graph's state from its designated file path, parsing the JSON data into a networkx graph object.",
+      "id": "KnowledgeGraph._load"
+    },
+    {
+      "type": "concept",
+      "description": "A standard Python library for working with JSON data, utilized by KnowledgeGraph for serializing and deserializing graph data.",
+      "id": "json"
+    },
+    {
+      "type": "class",
+      "description": "A Python standard library class used for representing file system paths, enabling object-oriented interaction with the graph's persistence file.",
+      "id": "pathlib.Path"
+    },
+    {
+      "type": "module",
+      "description": "The main module for the ingestion pipeline, orchestrating the process from reading Git commits to updating the project wiki.",
+      "id": "ingest.py"
+    },
+    {
+      "type": "class",
+      "description": "A dataclass that encapsulates the results of processing a single Git commit, including created/updated pages, found entities, facts, contradictions, and errors.",
+      "id": "IngestResult"
+    },
+    {
+      "type": "class",
+      "description": "An exception raised when a Git commit is deemed irrelevant or has no changes to process after filtering.",
+      "id": "SkippedCommit"
+    },
+    {
+      "type": "function",
+      "description": "A function that processes a Git commit by using an LLM to extract structured information (entities, relations, facts) and updates the project wiki's graph and pages accordingly.",
+      "id": "ingest_commit"
+    },
+    {
+      "type": "function",
+      "description": "Builds an LLM prompt from the commit context and calls the LLM for structured information extraction, with a fallback for failed extractions.",
+      "id": "_extract"
+    },
+    {
+      "type": "function",
+      "description": "A helper function that constructs the detailed prompt for the LLM, including commit context and file contents, to guide information extraction.",
+      "id": "_build_extraction_prompt"
+    },
+    {
+      "type": "function",
+      "description": "A helper function responsible for formatting and potentially truncating file contents before they are included in the LLM prompt, to manage input size.",
+      "id": "_format_file_contents"
+    },
+    {
+      "type": "function",
+      "description": "Generates the markdown content for a commit summary page in the wiki, incorporating details from the Git commit context and LLM extraction.",
+      "id": "_build_summary_body"
+    },
+    {
+      "type": "class",
+      "description": "A data structure encapsulating all relevant information about a Git commit, such as SHA, message, diff, and changed files.",
+      "id": "CommitContext"
+    },
+    {
+      "type": "concept",
+      "description": "A Python decorator used for automatically generating methods like __init__, __repr__, etc., for classes primarily used to store data.",
+      "id": "dataclass"
+    },
+    {
+      "type": "concept",
+      "description": "The process of using a Large Language Model to identify and structure entities, relations, facts, and contradictions from text data.",
+      "id": "LLM extraction"
+    },
+    {
+      "type": "concept",
+      "description": "The process of modifying the project wiki based on information extracted from Git commits, including creating/updating pages and graphs.",
+      "id": "wiki update"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "read_commit"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "textwrap"
+    },
+    {
+      "type": "function",
+      "description": "The primary function that orchestrates the file scanning, batching, LLM extraction, and wiki update process for an entire project snapshot.",
+      "id": "ingest_all_files"
+    },
+    {
+      "type": "class",
+      "description": "A dataclass that encapsulates the results of a file ingestion operation, including counts of processed files, created/updated pages, entities, facts, and any errors encountered.",
+      "id": "IngestAllFilesResult"
+    },
+    {
+      "type": "function",
+      "description": "Scans a given project root directory to find all processable files, excluding specified directories, files, unsupported extensions, and very large files.",
+      "id": "scan_files"
+    },
+    {
+      "type": "function",
+      "description": "Groups a list of file paths into batches by their parent directory, ensuring that each batch's total character count does not exceed a predefined budget for LLM processing.",
+      "id": "_batch_files"
+    },
+    {
+      "type": "function",
+      "description": "Interacts with the LLM client to generate structured information (summary, entities, relations, facts, contradictions) from a batch of file contents.",
+      "id": "_extract_from_files"
+    },
+    {
+      "type": "function",
+      "description": "Constructs the detailed prompt for the LLM, including the list of files being analyzed and their contents, to guide the information extraction process.",
+      "id": "_build_file_extraction_prompt"
+    },
+    {
+      "type": "function",
+      "description": "Formats a dictionary of file paths and their contents into a markdown string suitable for inclusion in an LLM prompt.",
+      "id": "_format_files"
+    },
+    {
+      "type": "function",
+      "description": "Takes the structured data extracted by the LLM and applies it to the wiki, knowledge graph, and confidence store, creating or updating wiki pages and recording entities/facts.",
+      "id": "_apply_extraction"
+    },
+    {
+      "type": "concept",
+      "description": "A frozenset of file extensions that are considered processable source, configuration, or documentation files by the ingestion system.",
+      "id": "SUPPORTED_EXTENSIONS"
+    },
+    {
+      "type": "concept",
+      "description": "A frozenset of directory names that are always excluded from file scanning, regardless of other configurations (e.g., .git, .venv, node_modules).",
+      "id": "EXCLUDED_DIRS"
+    },
+    {
+      "type": "concept",
+      "description": "A frozenset of specific file names that are always skipped during file scanning (e.g., lock files, compiled Python files).",
+      "id": "EXCLUDED_FILES"
+    },
+    {
+      "type": "concept",
+      "description": "An integer representing the maximum character budget allowed for a single batch of file content sent to the LLM for extraction.",
+      "id": "_BATCH_CHAR_BUDGET"
+    },
+    {
+      "type": "module",
+      "description": "The main module providing the `LLMClient` for interacting with the Google Gemini API.",
+      "id": "llmwikidoc.llm"
+    },
+    {
+      "type": "function",
+      "description": "Initializes the `LLMClient` with a configuration object and sets up the underlying `google.genai.Client`.",
+      "id": "LLMClient.__init__"
+    },
+    {
+      "type": "function",
+      "description": "Sends a text prompt to the Gemini model and returns the text response, optionally requesting JSON output. It includes a retry mechanism with exponential backoff for robustness.",
+      "id": "LLMClient.generate"
+    },
+    {
+      "type": "function",
+      "description": "Generates a JSON response from Gemini by calling `generate` with `json_output=True` and then parses the raw string into a Python dictionary, raising an error for invalid JSON.",
+      "id": "LLMClient.generate_structured"
+    },
+    {
+      "type": "function",
+      "description": "Generates an embedding vector for a given input text using the 'gemini-embedding-001' model.",
+      "id": "LLMClient.embed"
+    },
+    {
+      "type": "function",
+      "description": "Closes the internal Google Gemini API client connection.",
+      "id": "LLMClient.close"
+    },
+    {
+      "type": "function",
+      "description": "Allows the `LLMClient` to be used as a context manager, returning the instance itself upon entering the context.",
+      "id": "LLMClient.__enter__"
+    },
+    {
+      "type": "function",
+      "description": "Ensures that the `LLMClient`'s internal client connection is closed when exiting a context manager block.",
+      "id": "LLMClient.__exit__"
+    },
+    {
+      "type": "module",
+      "description": "The official Python client library for interacting with Google's Generative AI API (Gemini).",
+      "id": "google.genai"
+    },
+    {
+      "type": "concept",
+      "description": "Google's generative AI platform, which provides models for tasks like text generation and embeddings, utilized by the `LLMClient`.",
+      "id": "Gemini API"
+    },
+    {
+      "type": "concept",
+      "description": "A retry strategy implemented in `LLMClient.generate` that increases the waiting time between failed API call attempts to prevent overwhelming the server and handle transient errors.",
+      "id": "Exponential Backoff"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "time"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "google.genai.Client"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "google.genai.types.GenerateContentConfig"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "google.genai.Client.models.generate_content"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "time.sleep"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "json.loads"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "google.genai.Client.models.embed_content"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "google.genai.Client.close"
+    },
+    {
+      "type": "module",
+      "description": "The module responsible for orchestrating a multi-stream hybrid search functionality for a project wiki, consolidating results using the Reciprocal Rank Fusion algorithm.",
+      "id": "llmwikidoc.search"
+    },
+    {
+      "type": "class",
+      "description": "A dataclass representing a single result from the hybrid search, containing the matched WikiPage object, its relevance score, and a list of search streams (e.g., 'bm25', 'vector', 'graph') that contributed to its match.",
+      "id": "SearchResult"
+    },
+    {
+      "type": "class",
+      "description": "A utility class that manages the persistence and retrieval of vector embeddings, caching them to a JSON file keyed by content hash to avoid redundant API calls for embedding generation.",
+      "id": "EmbeddingCache"
+    },
+    {
+      "type": "class",
+      "description": "The primary search class that orchestrates three distinct search streams (BM25, vector embeddings, and knowledge graph traversal) and fuses their ranked results using weighted Reciprocal Rank Fusion to provide comprehensive search functionality.",
+      "id": "HybridSearch"
+    },
+    {
+      "type": "function",
+      "description": "A utility function that combines multiple ranked lists of search results (represented as `(page_idx, score)` tuples) into a single aggregated score dictionary for each page, using a weighted Reciprocal Rank Fusion algorithm.",
+      "id": "_reciprocal_rank_fusion"
+    },
+    {
+      "type": "function",
+      "description": "A helper function that extracts and combines the name and body content of a WikiPage object into a single string, primarily used for indexing or embedding generation.",
+      "id": "_page_text"
+    },
+    {
+      "type": "function",
+      "description": "A simple utility function that tokenizes a given text string by extracting lowercase words, ignoring punctuation, used for BM25 indexing and query processing.",
+      "id": "_tokenize"
+    },
+    {
+      "type": "function",
+      "description": "A utility function that calculates the cosine similarity between two given lists of floats (vectors), returning a measure of their semantic similarity.",
+      "id": "_cosine_similarity"
+    },
+    {
+      "type": "function",
+      "description": "A utility function that generates a SHA256 hash (truncated to 16 characters) of the first 2000 characters of an input text, used as a key for the EmbeddingCache.",
+      "id": "_content_hash"
+    },
+    {
+      "type": "class",
+      "description": "An external class from the `rank_bm25` library, implementing the BM25 ranking function for keyword-based search, utilized by `HybridSearch`.",
+      "id": "BM25Okapi"
+    },
+    {
+      "type": "module",
+      "description": "The core module responsible for managing wiki files, offering functionalities for parsing markdown with frontmatter, handling wiki pages, and orchestrating high-level wiki operations.",
+      "id": "llmwikidoc.wiki"
+    },
+    {
+      "type": "function",
+      "description": "Extracts and parses the YAML-like frontmatter from a markdown string, returning it as a dictionary along with the remaining body content.",
+      "id": "parse_frontmatter"
+    },
+    {
+      "type": "function",
+      "description": "Serializes a given frontmatter dictionary and body string back into a complete markdown string, correctly formatted with frontmatter delimiters.",
+      "id": "render_frontmatter"
+    },
+    {
+      "type": "function",
+      "description": "Converts an input string (typically a page name) into a safe, lowercase, and filesystem-compatible filename by sanitizing characters and replacing spaces with underscores.",
+      "id": "_safe_filename"
+    },
+    {
+      "type": "concept",
+      "description": "The metadata block at the beginning of a markdown file, delimited by '---', containing key-value pairs that define properties such as page type, name, creation/update dates, and sources.",
+      "id": "Frontmatter"
+    },
+    {
+      "type": "concept",
+      "description": "The fundamental set of Create, Read, Update, and Delete operations. This module primarily implements Create, Read, and Update functionalities for wiki pages.",
+      "id": "CRUD Operations"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "_FRONTMATTER_RE"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "create_or_update_page"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "create_summary"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "re"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "datetime"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "timezone"
+    },
+    {
+      "type": "function",
+      "description": "A test utility function that creates a new instance of ConfidenceStore with a temporary path and default ConfidenceConfig.",
+      "id": "make_store"
+    },
+    {
+      "type": "function",
+      "description": "A pytest fixture providing a temporary directory structured to simulate a Git project root for testing purposes.",
+      "id": "tmp_project"
+    },
+    {
+      "type": "function",
+      "description": "A pytest fixture providing a default Config instance initialized for testing, using a temporary project root.",
+      "id": "default_config"
+    },
+    {
+      "type": "constant",
+      "description": "A constant defining the Time-To-Live (in days) for facts or pages in the 'working' tier, after which they become eligible for decay or promotion.",
+      "id": "WORKING_TTL_DAYS"
+    },
+    {
+      "type": "constant",
+      "description": "A constant defining the Time-To-Live (in days) for facts or pages in the 'episodic' tier.",
+      "id": "EPISODIC_TTL_DAYS"
+    },
+    {
+      "type": "constant",
+      "description": "A constant defining the Time-To-Live (in days) for facts or pages in the 'semantic' tier.",
+      "id": "SEMANTIC_TTL_DAYS"
+    },
+    {
+      "type": "constant",
+      "description": "The minimum confidence score required for a fact or page to be promoted to the 'procedural' tier.",
+      "id": "PROCEDURAL_THRESHOLD"
+    },
+    {
+      "type": "concept",
+      "description": "The initial and least stable tier for facts and wiki pages, representing newly acquired or unverified information.",
+      "id": "working tier"
+    },
+    {
+      "type": "concept",
+      "description": "A intermediate tier for facts and wiki pages that have received some reinforcement or have multiple sources, indicating a higher level of stability than 'working'.",
+      "id": "episodic tier"
+    },
+    {
+      "type": "concept",
+      "description": "A more stable tier for facts and wiki pages, indicating a broader consensus or significant reinforcement, moving beyond individual events.",
+      "id": "semantic tier"
+    },
+    {
+      "type": "concept",
+      "description": "The highest and most stable tier for facts and wiki pages, representing highly confident and well-established knowledge, often implicitly known or consistently applied.",
+      "id": "procedural tier"
+    },
+    {
+      "type": "concept",
+      "description": "The process of elevating a fact to a higher tier or marking it as 'consolidated' when it meets specific criteria, such as age, confidence, or multiple sources.",
+      "id": "Fact promotion"
+    },
+    {
+      "type": "concept",
+      "description": "The process of elevating an entire wiki page to a higher conceptual tier based on the stability and confidence of its contained facts and its own age.",
+      "id": "Page promotion"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "make_wiki"
+    },
+    {
+      "type": "concept",
+      "description": "A predefined dictionary representing a mock output from the LLM, used in tests to simulate successful information extraction.",
+      "id": "MOCK_EXTRACTION"
+    },
+    {
+      "type": "concept",
+      "description": "A mock entity used in tests to represent a data storage component.",
+      "id": "Database"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "tests/test_graph.py"
+    },
+    {
+      "type": "unknown",
+      "description": "",
+      "id": "tests/test_ingest.py"
     }
   ],
   "edges": [
     {
-      "type": "uses",
+      "type": "related_to",
       "source": "llmwikidoc",
       "target": "GEMINI_API_KEY"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc",
+      "target": ".llmwikidoc.toml"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc",
+      "target": "CLAUDE.md"
+    },
+    {
+      "type": "implements",
+      "source": "llmwikidoc",
+      "target": "main.py"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc",
+      "target": "CodeGraph"
+    },
+    {
+      "type": "depends_on",
+      "source": "llmwikidoc",
+      "target": "typer"
+    },
+    {
+      "type": "depends_on",
+      "source": "llmwikidoc",
+      "target": "rich"
+    },
+    {
+      "type": "depends_on",
+      "source": "llmwikidoc",
+      "target": "google-genai"
+    },
+    {
+      "type": "depends_on",
+      "source": "llmwikidoc",
+      "target": "gitpython"
+    },
+    {
+      "type": "depends_on",
+      "source": "llmwikidoc",
+      "target": "networkx"
+    },
+    {
+      "type": "depends_on",
+      "source": "llmwikidoc",
+      "target": "rank-bm25"
+    },
+    {
+      "type": "depends_on",
+      "source": "llmwikidoc",
+      "target": "tomli"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc",
+      "target": "tomllib"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc",
+      "target": "pytest"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc",
+      "target": "pytest-mock"
+    },
+    {
+      "type": "depends_on",
+      "source": "llmwikidoc",
+      "target": "tomli-w"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc",
+      "target": "hatchling"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc",
+      "target": "pyinstaller"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc",
+      "target": "Python"
+    },
+    {
+      "type": "implements",
+      "source": "llmwikidoc",
+      "target": "git hook"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc",
+      "target": "wiki/"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc",
+      "target": "UserService"
     },
     {
       "type": "related_to",
@@ -169,6 +1349,21 @@
       "type": "related_to",
       "source": "llmwikidoc init",
       "target": "git commit hook"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc init",
+      "target": "wiki/"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc init",
+      "target": "post-commit"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc init",
+      "target": ".llmwikidoc.toml"
     },
     {
       "type": "related_to",
@@ -194,6 +1389,16 @@
       "type": "uses",
       "source": "llmwikidoc query",
       "target": "WikiManager"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc query",
+      "target": "search"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc query",
+      "target": "llm"
     },
     {
       "type": "related_to",
@@ -251,6 +1456,31 @@
       "target": "ConsolidationResult"
     },
     {
+      "type": "uses",
+      "source": "ConfidenceStore",
+      "target": "Fact"
+    },
+    {
+      "type": "uses",
+      "source": "ConfidenceStore",
+      "target": "ConfidenceConfig"
+    },
+    {
+      "type": "calls",
+      "source": "ConfidenceStore",
+      "target": "_fact_key"
+    },
+    {
+      "type": "related_to",
+      "source": "ConfidenceStore",
+      "target": ".llmwikidoc.toml"
+    },
+    {
+      "type": "calls",
+      "source": "Fact",
+      "target": "_now_iso"
+    },
+    {
       "type": "modifies",
       "source": "_apply_decay",
       "target": "Fact"
@@ -266,6 +1496,16 @@
       "target": "ConsolidationResult"
     },
     {
+      "type": "calls",
+      "source": "_apply_decay",
+      "target": "_fact_tier"
+    },
+    {
+      "type": "calls",
+      "source": "_apply_decay",
+      "target": "_tier_stability_multiplier"
+    },
+    {
       "type": "modifies",
       "source": "_promote_facts",
       "target": "Fact"
@@ -279,6 +1519,11 @@
       "type": "modifies",
       "source": "_promote_facts",
       "target": "ConsolidationResult"
+    },
+    {
+      "type": "calls",
+      "source": "_promote_facts",
+      "target": "_fact_tier"
     },
     {
       "type": "uses",
@@ -306,9 +1551,1149 @@
       "target": "llmwikidoc"
     },
     {
+      "type": "uses",
+      "source": "WikiManager",
+      "target": "WikiPage"
+    },
+    {
+      "type": "calls",
+      "source": "WikiManager",
+      "target": "_safe_filename"
+    },
+    {
+      "type": "calls",
+      "source": "WikiManager",
+      "target": "_now_iso"
+    },
+    {
+      "type": "depends_on",
+      "source": "WikiManager",
+      "target": "pathlib.Path"
+    },
+    {
+      "type": "uses",
+      "source": "WikiManager",
+      "target": "Frontmatter"
+    },
+    {
+      "type": "implements",
+      "source": "WikiManager",
+      "target": "CRUD Operations"
+    },
+    {
       "type": "calls",
       "source": "git commit hook",
       "target": "llmwikidoc ingest"
+    },
+    {
+      "type": "related_to",
+      "source": ".llmwikidoc.toml",
+      "target": "gemini-2.5-flash"
+    },
+    {
+      "type": "related_to",
+      "source": ".llmwikidoc.toml",
+      "target": "wiki_dir"
+    },
+    {
+      "type": "related_to",
+      "source": ".llmwikidoc.toml",
+      "target": "context_depth"
+    },
+    {
+      "type": "related_to",
+      "source": ".llmwikidoc.toml",
+      "target": "confidence settings"
+    },
+    {
+      "type": "related_to",
+      "source": ".llmwikidoc.toml",
+      "target": "search weights"
+    },
+    {
+      "type": "related_to",
+      "source": "CLAUDE.md",
+      "target": "Project Status"
+    },
+    {
+      "type": "related_to",
+      "source": "CLAUDE.md",
+      "target": "Workflow Rules"
+    },
+    {
+      "type": "related_to",
+      "source": "CLAUDE.md",
+      "target": "CodeGraph"
+    },
+    {
+      "type": "calls",
+      "source": "main.py",
+      "target": "main"
+    },
+    {
+      "type": "uses",
+      "source": "cli",
+      "target": "typer"
+    },
+    {
+      "type": "uses",
+      "source": "cli",
+      "target": "rich"
+    },
+    {
+      "type": "uses",
+      "source": "config",
+      "target": "tomli"
+    },
+    {
+      "type": "uses",
+      "source": "config",
+      "target": "tomllib"
+    },
+    {
+      "type": "uses",
+      "source": "git_reader",
+      "target": "gitpython"
+    },
+    {
+      "type": "calls",
+      "source": "ingest",
+      "target": "git_reader"
+    },
+    {
+      "type": "calls",
+      "source": "ingest",
+      "target": "llm"
+    },
+    {
+      "type": "calls",
+      "source": "ingest",
+      "target": "wiki"
+    },
+    {
+      "type": "calls",
+      "source": "ingest",
+      "target": "graph"
+    },
+    {
+      "type": "calls",
+      "source": "ingest",
+      "target": "confidence"
+    },
+    {
+      "type": "uses",
+      "source": "ingest",
+      "target": "llmwikidoc.config"
+    },
+    {
+      "type": "calls",
+      "source": "ingest",
+      "target": "llmwikidoc.ingest.ingest_commit"
+    },
+    {
+      "type": "calls",
+      "source": "ingest",
+      "target": "_ingest_all"
+    },
+    {
+      "type": "calls",
+      "source": "ingest",
+      "target": "_print_ingest_result"
+    },
+    {
+      "type": "implements",
+      "source": "ingest",
+      "target": "Commit Ingestion"
+    },
+    {
+      "type": "uses",
+      "source": "ingest",
+      "target": "Configuration Management"
+    },
+    {
+      "type": "uses",
+      "source": "ingest",
+      "target": "Console Output"
+    },
+    {
+      "type": "uses",
+      "source": "llm",
+      "target": "google-genai"
+    },
+    {
+      "type": "uses",
+      "source": "graph",
+      "target": "networkx"
+    },
+    {
+      "type": "related_to",
+      "source": "graph",
+      "target": "Knowledge Graph"
+    },
+    {
+      "type": "related_to",
+      "source": "confidence",
+      "target": "Confidence Scoring"
+    },
+    {
+      "type": "depends_on",
+      "source": "confidence",
+      "target": "config"
+    },
+    {
+      "type": "uses",
+      "source": "search",
+      "target": "rank-bm25"
+    },
+    {
+      "type": "uses",
+      "source": "search",
+      "target": "google-genai"
+    },
+    {
+      "type": "implements",
+      "source": "search",
+      "target": "Hybrid Search"
+    },
+    {
+      "type": "uses",
+      "source": "search",
+      "target": "Reciprocal Rank Fusion"
+    },
+    {
+      "type": "related_to",
+      "source": "lint",
+      "target": "contradictions"
+    },
+    {
+      "type": "calls",
+      "source": "post-commit",
+      "target": "llmwikidoc ingest"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc lint",
+      "target": "lint"
+    },
+    {
+      "type": "related_to",
+      "source": "Consolidation Tiers",
+      "target": "llmwikidoc"
+    },
+    {
+      "type": "related_to",
+      "source": "Retention Decay",
+      "target": "llmwikidoc"
+    },
+    {
+      "type": "related_to",
+      "source": "Session Crystallization",
+      "target": "llmwikidoc"
+    },
+    {
+      "type": "related_to",
+      "source": "Markdown Frontmatter",
+      "target": "wiki"
+    },
+    {
+      "type": "related_to",
+      "source": "JSON LLM Output",
+      "target": "llm"
+    },
+    {
+      "type": "related_to",
+      "source": "Cached Embeddings",
+      "target": "search"
+    },
+    {
+      "type": "related_to",
+      "source": "In-repo Wiki",
+      "target": "wiki/"
+    },
+    {
+      "type": "related_to",
+      "source": "Environment Variable API Key",
+      "target": "llm"
+    },
+    {
+      "type": "related_to",
+      "source": "uv",
+      "target": "llmwikidoc"
+    },
+    {
+      "type": "related_to",
+      "source": "winget",
+      "target": "Python"
+    },
+    {
+      "type": "related_to",
+      "source": "llmwikidoc.cli",
+      "target": "app"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.cli",
+      "target": "typer"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.cli",
+      "target": "rich.console"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.cli",
+      "target": "rich.panel"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.cli",
+      "target": "rich.table"
+    },
+    {
+      "type": "implements",
+      "source": "llmwikidoc.cli",
+      "target": "CLI Entry Point"
+    },
+    {
+      "type": "calls",
+      "source": "app",
+      "target": "init"
+    },
+    {
+      "type": "calls",
+      "source": "app",
+      "target": "ingest"
+    },
+    {
+      "type": "calls",
+      "source": "app",
+      "target": "ingestall"
+    },
+    {
+      "type": "uses",
+      "source": "init",
+      "target": "llmwikidoc.config"
+    },
+    {
+      "type": "uses",
+      "source": "init",
+      "target": "llmwikidoc.wiki.WikiManager"
+    },
+    {
+      "type": "calls",
+      "source": "init",
+      "target": "_install_hook"
+    },
+    {
+      "type": "implements",
+      "source": "init",
+      "target": "Wiki Initialization"
+    },
+    {
+      "type": "uses",
+      "source": "init",
+      "target": "Configuration Management"
+    },
+    {
+      "type": "uses",
+      "source": "init",
+      "target": "Console Output"
+    },
+    {
+      "type": "calls",
+      "source": "_install_hook",
+      "target": "_hook_script"
+    },
+    {
+      "type": "implements",
+      "source": "_install_hook",
+      "target": "Git Post-Commit Hook"
+    },
+    {
+      "type": "related_to",
+      "source": "_hook_script",
+      "target": "llmwikidoc ingest"
+    },
+    {
+      "type": "uses",
+      "source": "_ingest_all",
+      "target": "git.Repo"
+    },
+    {
+      "type": "uses",
+      "source": "_ingest_all",
+      "target": "llmwikidoc.wiki.WikiManager"
+    },
+    {
+      "type": "calls",
+      "source": "_ingest_all",
+      "target": "llmwikidoc.ingest.ingest_commit"
+    },
+    {
+      "type": "uses",
+      "source": "_ingest_all",
+      "target": "Console Output"
+    },
+    {
+      "type": "uses",
+      "source": "_print_ingest_result",
+      "target": "Console Output"
+    },
+    {
+      "type": "uses",
+      "source": "ingestall",
+      "target": "llmwikidoc.config"
+    },
+    {
+      "type": "calls",
+      "source": "ingestall",
+      "target": "llmwikidoc.ingest_files.scan_files"
+    },
+    {
+      "type": "calls",
+      "source": "ingestall",
+      "target": "llmwikidoc.ingest_files._batch_files"
+    },
+    {
+      "type": "calls",
+      "source": "ingestall",
+      "target": "llmwikidoc.ingest_files.ingest_all_files"
+    },
+    {
+      "type": "uses",
+      "source": "ingestall",
+      "target": "llmwikidoc.ingest_files.SUPPORTED_EXTENSIONS"
+    },
+    {
+      "type": "implements",
+      "source": "ingestall",
+      "target": "File Ingestion"
+    },
+    {
+      "type": "uses",
+      "source": "ingestall",
+      "target": "Configuration Management"
+    },
+    {
+      "type": "uses",
+      "source": "ingestall",
+      "target": "Console Output"
+    },
+    {
+      "type": "depends_on",
+      "source": "_now_iso",
+      "target": "datetime"
+    },
+    {
+      "type": "depends_on",
+      "source": "_now_iso",
+      "target": "timezone"
+    },
+    {
+      "type": "uses",
+      "source": "Config",
+      "target": "ConfidenceConfig"
+    },
+    {
+      "type": "uses",
+      "source": "Config",
+      "target": "SearchConfig"
+    },
+    {
+      "type": "uses",
+      "source": "Config",
+      "target": "_find_project_root"
+    },
+    {
+      "type": "implements",
+      "source": "load",
+      "target": "Config"
+    },
+    {
+      "type": "calls",
+      "source": "load",
+      "target": "_find_project_root"
+    },
+    {
+      "type": "related_to",
+      "source": "load",
+      "target": ".llmwikidoc.toml"
+    },
+    {
+      "type": "modifies",
+      "source": "write_default",
+      "target": ".llmwikidoc.toml"
+    },
+    {
+      "type": "uses",
+      "source": "write_default",
+      "target": "Config"
+    },
+    {
+      "type": "depends_on",
+      "source": "Config.api_key",
+      "target": "os.environ"
+    },
+    {
+      "type": "calls",
+      "source": "ConfidenceStore.save",
+      "target": "Fact.to_dict"
+    },
+    {
+      "type": "calls",
+      "source": "ConfidenceStore._load",
+      "target": "Fact.from_dict"
+    },
+    {
+      "type": "related_to",
+      "source": "Consolidation tiers",
+      "target": "working"
+    },
+    {
+      "type": "related_to",
+      "source": "Consolidation tiers",
+      "target": "episodic"
+    },
+    {
+      "type": "related_to",
+      "source": "Consolidation tiers",
+      "target": "semantic"
+    },
+    {
+      "type": "related_to",
+      "source": "Consolidation tiers",
+      "target": "procedural"
+    },
+    {
+      "type": "uses",
+      "source": "Memory lifecycle",
+      "target": "Consolidation tiers"
+    },
+    {
+      "type": "uses",
+      "source": "Memory lifecycle",
+      "target": "Ebbinghaus retention decay"
+    },
+    {
+      "type": "calls",
+      "source": "run_consolidation",
+      "target": "_apply_decay"
+    },
+    {
+      "type": "calls",
+      "source": "run_consolidation",
+      "target": "_promote_facts"
+    },
+    {
+      "type": "calls",
+      "source": "run_consolidation",
+      "target": "_promote_pages"
+    },
+    {
+      "type": "related_to",
+      "source": "run_consolidation",
+      "target": "ConsolidationResult"
+    },
+    {
+      "type": "uses",
+      "source": "run_consolidation",
+      "target": "WikiManager"
+    },
+    {
+      "type": "uses",
+      "source": "run_consolidation",
+      "target": "ConfidenceStore"
+    },
+    {
+      "type": "uses",
+      "source": "_promote_pages",
+      "target": "_compute_new_tier"
+    },
+    {
+      "type": "calls",
+      "source": "_promote_pages",
+      "target": "_compress_page"
+    },
+    {
+      "type": "modifies",
+      "source": "_promote_pages",
+      "target": "WikiPage"
+    },
+    {
+      "type": "modifies",
+      "source": "_promote_pages",
+      "target": "WikiManager"
+    },
+    {
+      "type": "uses",
+      "source": "_compress_page",
+      "target": "LLMClient"
+    },
+    {
+      "type": "related_to",
+      "source": "create_digest",
+      "target": "DigestResult"
+    },
+    {
+      "type": "uses",
+      "source": "create_digest",
+      "target": "LLMClient"
+    },
+    {
+      "type": "uses",
+      "source": "create_digest",
+      "target": "WikiManager"
+    },
+    {
+      "type": "uses",
+      "source": "create_digest",
+      "target": "ConfidenceStore"
+    },
+    {
+      "type": "depends_on",
+      "source": "LLMClient",
+      "target": "Config"
+    },
+    {
+      "type": "uses",
+      "source": "LLMClient",
+      "target": "google.genai.Client"
+    },
+    {
+      "type": "uses",
+      "source": "LLMClient",
+      "target": "Gemini API"
+    },
+    {
+      "type": "calls",
+      "source": "WikiPage",
+      "target": "parse_frontmatter"
+    },
+    {
+      "type": "calls",
+      "source": "WikiPage",
+      "target": "render_frontmatter"
+    },
+    {
+      "type": "depends_on",
+      "source": "WikiPage",
+      "target": "pathlib.Path"
+    },
+    {
+      "type": "uses",
+      "source": "WikiPage",
+      "target": "Frontmatter"
+    },
+    {
+      "type": "implements",
+      "source": "llmwikidoc.graph",
+      "target": "KnowledgeGraph"
+    },
+    {
+      "type": "uses",
+      "source": "KnowledgeGraph",
+      "target": "networkx"
+    },
+    {
+      "type": "uses",
+      "source": "KnowledgeGraph",
+      "target": "json"
+    },
+    {
+      "type": "uses",
+      "source": "KnowledgeGraph",
+      "target": "pathlib.Path"
+    },
+    {
+      "type": "calls",
+      "source": "KnowledgeGraph.__init__",
+      "target": "KnowledgeGraph._load"
+    },
+    {
+      "type": "modifies",
+      "source": "KnowledgeGraph.add_entity",
+      "target": "KnowledgeGraph"
+    },
+    {
+      "type": "uses",
+      "source": "KnowledgeGraph.add_relation",
+      "target": "VALID_RELATION_TYPES"
+    },
+    {
+      "type": "modifies",
+      "source": "KnowledgeGraph.add_relation",
+      "target": "KnowledgeGraph"
+    },
+    {
+      "type": "calls",
+      "source": "KnowledgeGraph.find_path",
+      "target": "networkx"
+    },
+    {
+      "type": "modifies",
+      "source": "KnowledgeGraph.save",
+      "target": "pathlib.Path"
+    },
+    {
+      "type": "calls",
+      "source": "KnowledgeGraph.save",
+      "target": "networkx"
+    },
+    {
+      "type": "calls",
+      "source": "KnowledgeGraph.save",
+      "target": "json"
+    },
+    {
+      "type": "uses",
+      "source": "KnowledgeGraph._load",
+      "target": "pathlib.Path"
+    },
+    {
+      "type": "calls",
+      "source": "KnowledgeGraph._load",
+      "target": "json"
+    },
+    {
+      "type": "calls",
+      "source": "KnowledgeGraph._load",
+      "target": "networkx"
+    },
+    {
+      "type": "uses",
+      "source": "IngestResult",
+      "target": "dataclass"
+    },
+    {
+      "type": "uses",
+      "source": "ingest_commit",
+      "target": "Config"
+    },
+    {
+      "type": "calls",
+      "source": "ingest_commit",
+      "target": "read_commit"
+    },
+    {
+      "type": "uses",
+      "source": "ingest_commit",
+      "target": "CommitContext"
+    },
+    {
+      "type": "depends_on",
+      "source": "ingest_commit",
+      "target": "LLMClient"
+    },
+    {
+      "type": "calls",
+      "source": "ingest_commit",
+      "target": "_extract"
+    },
+    {
+      "type": "uses",
+      "source": "ingest_commit",
+      "target": "WikiManager"
+    },
+    {
+      "type": "modifies",
+      "source": "ingest_commit",
+      "target": "KnowledgeGraph"
+    },
+    {
+      "type": "uses",
+      "source": "ingest_commit",
+      "target": "ConfidenceStore"
+    },
+    {
+      "type": "calls",
+      "source": "ingest_commit",
+      "target": "_build_summary_body"
+    },
+    {
+      "type": "related_to",
+      "source": "ingest_commit",
+      "target": "IngestResult"
+    },
+    {
+      "type": "related_to",
+      "source": "ingest_commit",
+      "target": "SkippedCommit"
+    },
+    {
+      "type": "uses",
+      "source": "_extract",
+      "target": "LLMClient"
+    },
+    {
+      "type": "uses",
+      "source": "_extract",
+      "target": "CommitContext"
+    },
+    {
+      "type": "calls",
+      "source": "_extract",
+      "target": "_build_extraction_prompt"
+    },
+    {
+      "type": "uses",
+      "source": "_build_extraction_prompt",
+      "target": "CommitContext"
+    },
+    {
+      "type": "calls",
+      "source": "_build_extraction_prompt",
+      "target": "_format_file_contents"
+    },
+    {
+      "type": "uses",
+      "source": "_format_file_contents",
+      "target": "textwrap"
+    },
+    {
+      "type": "uses",
+      "source": "_build_summary_body",
+      "target": "CommitContext"
+    },
+    {
+      "type": "uses",
+      "source": "ingest_all_files",
+      "target": "scan_files"
+    },
+    {
+      "type": "uses",
+      "source": "ingest_all_files",
+      "target": "_batch_files"
+    },
+    {
+      "type": "calls",
+      "source": "ingest_all_files",
+      "target": "_extract_from_files"
+    },
+    {
+      "type": "calls",
+      "source": "ingest_all_files",
+      "target": "_apply_extraction"
+    },
+    {
+      "type": "related_to",
+      "source": "ingest_all_files",
+      "target": "IngestAllFilesResult"
+    },
+    {
+      "type": "uses",
+      "source": "scan_files",
+      "target": "SUPPORTED_EXTENSIONS"
+    },
+    {
+      "type": "uses",
+      "source": "scan_files",
+      "target": "EXCLUDED_DIRS"
+    },
+    {
+      "type": "uses",
+      "source": "scan_files",
+      "target": "EXCLUDED_FILES"
+    },
+    {
+      "type": "uses",
+      "source": "_batch_files",
+      "target": "_BATCH_CHAR_BUDGET"
+    },
+    {
+      "type": "calls",
+      "source": "_extract_from_files",
+      "target": "_build_file_extraction_prompt"
+    },
+    {
+      "type": "calls",
+      "source": "_build_file_extraction_prompt",
+      "target": "_format_files"
+    },
+    {
+      "type": "uses",
+      "source": "_apply_extraction",
+      "target": "WikiManager"
+    },
+    {
+      "type": "uses",
+      "source": "_apply_extraction",
+      "target": "KnowledgeGraph"
+    },
+    {
+      "type": "uses",
+      "source": "_apply_extraction",
+      "target": "ConfidenceStore"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.llm",
+      "target": "google.genai"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.llm",
+      "target": "json"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.llm",
+      "target": "time"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.llm",
+      "target": "Config"
+    },
+    {
+      "type": "uses",
+      "source": "LLMClient.generate",
+      "target": "google.genai.types.GenerateContentConfig"
+    },
+    {
+      "type": "calls",
+      "source": "LLMClient.generate",
+      "target": "google.genai.Client.models.generate_content"
+    },
+    {
+      "type": "calls",
+      "source": "LLMClient.generate",
+      "target": "time.sleep"
+    },
+    {
+      "type": "implements",
+      "source": "LLMClient.generate",
+      "target": "Exponential Backoff"
+    },
+    {
+      "type": "calls",
+      "source": "LLMClient.generate_structured",
+      "target": "LLMClient.generate"
+    },
+    {
+      "type": "calls",
+      "source": "LLMClient.generate_structured",
+      "target": "json.loads"
+    },
+    {
+      "type": "calls",
+      "source": "LLMClient.embed",
+      "target": "google.genai.Client.models.embed_content"
+    },
+    {
+      "type": "calls",
+      "source": "LLMClient.close",
+      "target": "google.genai.Client.close"
+    },
+    {
+      "type": "calls",
+      "source": "LLMClient.__exit__",
+      "target": "LLMClient.close"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.search",
+      "target": "SearchResult"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.search",
+      "target": "EmbeddingCache"
+    },
+    {
+      "type": "uses",
+      "source": "llmwikidoc.search",
+      "target": "HybridSearch"
+    },
+    {
+      "type": "implements",
+      "source": "llmwikidoc.search",
+      "target": "_reciprocal_rank_fusion"
+    },
+    {
+      "type": "implements",
+      "source": "llmwikidoc.search",
+      "target": "_page_text"
+    },
+    {
+      "type": "implements",
+      "source": "llmwikidoc.search",
+      "target": "_tokenize"
+    },
+    {
+      "type": "implements",
+      "source": "llmwikidoc.search",
+      "target": "_cosine_similarity"
+    },
+    {
+      "type": "implements",
+      "source": "llmwikidoc.search",
+      "target": "_content_hash"
+    },
+    {
+      "type": "depends_on",
+      "source": "SearchResult",
+      "target": "WikiPage"
+    },
+    {
+      "type": "uses",
+      "source": "EmbeddingCache",
+      "target": "_content_hash"
+    },
+    {
+      "type": "uses",
+      "source": "HybridSearch",
+      "target": "Config"
+    },
+    {
+      "type": "uses",
+      "source": "HybridSearch",
+      "target": "WikiManager"
+    },
+    {
+      "type": "uses",
+      "source": "HybridSearch",
+      "target": "KnowledgeGraph"
+    },
+    {
+      "type": "uses",
+      "source": "HybridSearch",
+      "target": "EmbeddingCache"
+    },
+    {
+      "type": "uses",
+      "source": "HybridSearch",
+      "target": "BM25Okapi"
+    },
+    {
+      "type": "uses",
+      "source": "HybridSearch",
+      "target": "LLMClient"
+    },
+    {
+      "type": "calls",
+      "source": "HybridSearch",
+      "target": "_page_text"
+    },
+    {
+      "type": "calls",
+      "source": "HybridSearch",
+      "target": "_tokenize"
+    },
+    {
+      "type": "calls",
+      "source": "HybridSearch",
+      "target": "_reciprocal_rank_fusion"
+    },
+    {
+      "type": "calls",
+      "source": "HybridSearch",
+      "target": "_cosine_similarity"
+    },
+    {
+      "type": "related_to",
+      "source": "HybridSearch",
+      "target": "SearchResult"
+    },
+    {
+      "type": "implements",
+      "source": "HybridSearch",
+      "target": "Reciprocal Rank Fusion"
+    },
+    {
+      "type": "uses",
+      "source": "parse_frontmatter",
+      "target": "_FRONTMATTER_RE"
+    },
+    {
+      "type": "depends_on",
+      "source": "parse_frontmatter",
+      "target": "re"
+    },
+    {
+      "type": "depends_on",
+      "source": "_safe_filename",
+      "target": "re"
+    },
+    {
+      "type": "modifies",
+      "source": "create_or_update_page",
+      "target": "WikiPage"
+    },
+    {
+      "type": "modifies",
+      "source": "create_summary",
+      "target": "WikiPage"
+    },
+    {
+      "type": "uses",
+      "source": "make_store",
+      "target": "ConfidenceStore"
+    },
+    {
+      "type": "uses",
+      "source": "make_store",
+      "target": "ConfidenceConfig"
+    },
+    {
+      "type": "uses",
+      "source": "default_config",
+      "target": "tmp_project"
+    },
+    {
+      "type": "uses",
+      "source": "default_config",
+      "target": "Config"
+    },
+    {
+      "type": "related_to",
+      "source": "PROCEDURAL_THRESHOLD",
+      "target": "procedural tier"
+    },
+    {
+      "type": "related_to",
+      "source": "working tier",
+      "target": "episodic tier"
+    },
+    {
+      "type": "related_to",
+      "source": "episodic tier",
+      "target": "semantic tier"
+    },
+    {
+      "type": "related_to",
+      "source": "semantic tier",
+      "target": "procedural tier"
+    },
+    {
+      "type": "uses",
+      "source": "make_wiki",
+      "target": "Config"
+    },
+    {
+      "type": "uses",
+      "source": "make_wiki",
+      "target": "WikiManager"
+    },
+    {
+      "type": "related_to",
+      "source": "tests/test_graph.py",
+      "target": "KnowledgeGraph"
+    },
+    {
+      "type": "related_to",
+      "source": "tests/test_ingest.py",
+      "target": "ingest_commit"
+    },
+    {
+      "type": "related_to",
+      "source": "tests/test_ingest.py",
+      "target": "_build_extraction_prompt"
+    },
+    {
+      "type": "related_to",
+      "source": "tests/test_ingest.py",
+      "target": "_format_file_contents"
     }
   ]
 }

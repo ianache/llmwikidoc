@@ -2,16 +2,16 @@
 type: function
 name: _compute_new_tier
 created: 2026-04-30T03:36:09Z
-updated: 2026-04-30T03:37:18Z
-confidence: 0.75
-sources: [6aa2dea1334bfd4f859f9c2f77141ff28f427f3b]
+updated: 2026-05-01T23:48:45Z
+confidence: 0.85
+sources: [6aa2dea1334bfd4f859f9c2f77141ff28f427f3b, snapshot-20260501-234218]
 related: []
 tier: working
 ---
 # _compute_new_tier
 
-Calculates the potential new knowledge tier for a fact or page based on its current tier, confidence, sources, and age.
+Calculates the target tier for a fact or page given its current tier, confidence, source count, and age, applying the promotion rules.
 
 ## References
 
-- [6aa2dea1](../summaries/6aa2dea1.md)
+- [snapshot: snapshot-20260501-234218]

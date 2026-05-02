@@ -460,5 +460,2370 @@
     "created": "2026-04-30T03:37:18Z",
     "last_reinforced": "2026-04-30T03:37:18Z",
     "contradicted_by": []
+  },
+  "llmwikidoc::the project is named `llmwikidoc`.": {
+    "statement": "The project is named `llmwikidoc`.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the project is in its initial setup phase.": {
+    "statement": "The project is in its initial setup phase.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  ".llmwikidoc.toml::the llm model configured for the project is 'gemini-2.5-flas": {
+    "statement": "The LLM model configured for the project is 'gemini-2.5-flash'.",
+    "entity": ".llmwikidoc.toml",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  ".llmwikidoc.toml::the wiki output directory is configured as 'wiki'.": {
+    "statement": "The wiki output directory is configured as 'wiki'.",
+    "entity": ".llmwikidoc.toml",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  ".llmwikidoc.toml::the context depth for the llm is configured as 2.": {
+    "statement": "The context depth for the LLM is configured as 2.",
+    "entity": ".llmwikidoc.toml",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  ".llmwikidoc.toml::the initial confidence score is set to 0.7.": {
+    "statement": "The initial confidence score is set to 0.7.",
+    "entity": ".llmwikidoc.toml",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  "main::the `main` function in `main.py` prints 'hello from llmwikid": {
+    "statement": "The `main` function in `main.py` prints 'Hello from llmwikidoc!'.",
+    "entity": "main",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  "codegraph::codegraph is initialized and will index source files as they": {
+    "statement": "CodeGraph is initialized and will index source files as they are added.",
+    "entity": "CodeGraph",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  ".llmwikidoc.toml::the bm25 search weight is 0.33.": {
+    "statement": "The BM25 search weight is 0.33.",
+    "entity": ".llmwikidoc.toml",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  ".llmwikidoc.toml::the vector search weight is 0.33.": {
+    "statement": "The vector search weight is 0.33.",
+    "entity": ".llmwikidoc.toml",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  ".llmwikidoc.toml::the graph search weight is 0.34.": {
+    "statement": "The graph search weight is 0.34.",
+    "entity": ".llmwikidoc.toml",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:42:36Z",
+    "last_reinforced": "2026-05-01T23:42:36Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the project is named 'llmwikidoc'.": {
+    "statement": "The project is named 'llmwikidoc'.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::llmwikidoc is a python cli tool.": {
+    "statement": "llmwikidoc is a Python CLI tool.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::llmwikidoc automatically updates a markdown wiki.": {
+    "statement": "llmwikidoc automatically updates a markdown wiki.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "llm wiki pattern::the wiki follows karpathy's llm wiki pattern with v2 extensi": {
+    "statement": "The wiki follows Karpathy's LLM Wiki pattern with v2 extensions.",
+    "entity": "LLM Wiki Pattern",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "gemini-2.5-flash::the default llm model is 'gemini-2.5-flash'.": {
+    "statement": "The default LLM model is 'gemini-2.5-flash'.",
+    "entity": "gemini-2.5-flash",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "wiki/::the 'wiki/' directory contains 'index.md' for navigation.": {
+    "statement": "The 'wiki/' directory contains 'index.md' for navigation.",
+    "entity": "wiki/",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "wiki/::the 'wiki/' directory contains 'log.md' for operations loggi": {
+    "statement": "The 'wiki/' directory contains 'log.md' for operations logging.",
+    "entity": "wiki/",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "wiki/::the 'wiki/' directory stores the knowledge graph in 'graph.j": {
+    "statement": "The 'wiki/' directory stores the knowledge graph in 'graph.json'.",
+    "entity": "wiki/",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "wiki/::the 'wiki/' directory stores entity pages in 'entities/<name": {
+    "statement": "The 'wiki/' directory stores entity pages in 'entities/<name>.md'.",
+    "entity": "wiki/",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "wiki/::the 'wiki/' directory stores concept pages in 'concepts/<nam": {
+    "statement": "The 'wiki/' directory stores concept pages in 'concepts/<name>.md'.",
+    "entity": "wiki/",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "wiki/::the 'wiki/' directory stores commit summaries in 'summaries/": {
+    "statement": "The 'wiki/' directory stores commit summaries in 'summaries/<sha>.md'.",
+    "entity": "wiki/",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  ".llmwikidoc.toml::project configuration is stored in '.llmwikidoc.toml'.": {
+    "statement": "Project configuration is stored in '.llmwikidoc.toml'.",
+    "entity": ".llmwikidoc.toml",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc init::the 'llmwikidoc init' command initializes the wiki and insta": {
+    "statement": "The 'llmwikidoc init' command initializes the wiki and installs the Git hook.",
+    "entity": "llmwikidoc init",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc ingest::the 'llmwikidoc ingest' command manually processes the last ": {
+    "statement": "The 'llmwikidoc ingest' command manually processes the last commit.",
+    "entity": "llmwikidoc ingest",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc query::the 'llmwikidoc query' command allows natural language queri": {
+    "statement": "The 'llmwikidoc query' command allows natural language queries of the wiki.",
+    "entity": "llmwikidoc query",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc lint::the 'llmwikidoc lint' command performs health checks on the ": {
+    "statement": "The 'llmwikidoc lint' command performs health checks on the wiki content.",
+    "entity": "llmwikidoc lint",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc status::the 'llmwikidoc status' command shows statistics about the w": {
+    "statement": "The 'llmwikidoc status' command shows statistics about the wiki.",
+    "entity": "llmwikidoc status",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "confidence scoring::new facts are initially assigned a confidence score of 0.7.": {
+    "statement": "New facts are initially assigned a confidence score of 0.7.",
+    "entity": "Confidence Scoring",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "confidence scoring::reinforced facts increase their confidence score by 0.1.": {
+    "statement": "Reinforced facts increase their confidence score by 0.1.",
+    "entity": "Confidence Scoring",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "confidence scoring::contradicted facts decrease their confidence score by 0.2.": {
+    "statement": "Contradicted facts decrease their confidence score by 0.2.",
+    "entity": "Confidence Scoring",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "post-commit non-blocking::the git 'post-commit' hook is designed to be non-blocking.": {
+    "statement": "The Git 'post-commit' hook is designed to be non-blocking.",
+    "entity": "Post-commit Non-blocking",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "json llm output::gemini api communication uses 'response_mime_type=\"applicati": {
+    "statement": "Gemini API communication uses 'response_mime_type=\"application/json\"' for structured output.",
+    "entity": "JSON LLM Output",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "cached embeddings::embeddings are cached and recomputed only when the content o": {
+    "statement": "Embeddings are cached and recomputed only when the content of a page changes.",
+    "entity": "Cached Embeddings",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "in-repo wiki::the wiki resides within the same git repository as the docum": {
+    "statement": "The wiki resides within the same Git repository as the documented project.",
+    "entity": "In-repo Wiki",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "environment variable api key::the 'gemini_api_key' is loaded from an environment variable.": {
+    "statement": "The 'GEMINI_API_KEY' is loaded from an environment variable.",
+    "entity": "Environment Variable API Key",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "markdown frontmatter::wiki pages use yaml frontmatter for metadata.": {
+    "statement": "Wiki pages use YAML frontmatter for metadata.",
+    "entity": "Markdown Frontmatter",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "markdown frontmatter::frontmatter fields include 'type', 'name', 'created', 'updat": {
+    "statement": "Frontmatter fields include 'type', 'name', 'created', 'updated', 'confidence', 'sources', 'related', and 'tier'.",
+    "entity": "Markdown Frontmatter",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "config::the 'context_depth' configuration specifies the number of le": {
+    "statement": "The 'context_depth' configuration specifies the number of levels of related files to include during ingestion.",
+    "entity": "config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "confidence scoring::the 'confidence.initial' setting is 0.7.": {
+    "statement": "The 'confidence.initial' setting is 0.7.",
+    "entity": "Confidence Scoring",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "confidence scoring::the 'confidence.reinforce_delta' setting is 0.1.": {
+    "statement": "The 'confidence.reinforce_delta' setting is 0.1.",
+    "entity": "Confidence Scoring",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "confidence scoring::the 'confidence.contradict_delta' setting is -0.2.": {
+    "statement": "The 'confidence.contradict_delta' setting is -0.2.",
+    "entity": "Confidence Scoring",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "retention decay::the 'confidence.decay_days' setting is 30.": {
+    "statement": "The 'confidence.decay_days' setting is 30.",
+    "entity": "Retention Decay",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "hybrid search::the 'search.bm25_weight' setting for hybrid search is 0.33.": {
+    "statement": "The 'search.bm25_weight' setting for hybrid search is 0.33.",
+    "entity": "Hybrid Search",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "hybrid search::the 'search.vector_weight' setting for hybrid search is 0.33": {
+    "statement": "The 'search.vector_weight' setting for hybrid search is 0.33.",
+    "entity": "Hybrid Search",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "hybrid search::the 'search.graph_weight' setting for hybrid search is 0.34.": {
+    "statement": "The 'search.graph_weight' setting for hybrid search is 0.34.",
+    "entity": "Hybrid Search",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:21Z",
+    "last_reinforced": "2026-05-01T23:43:21Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the project name is \"llmwikidoc\".": {
+    "statement": "The project name is \"llmwikidoc\".",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the project version is \"0.1.0\".": {
+    "statement": "The project version is \"0.1.0\".",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the project description is \"llm-powered wiki that auto-updat": {
+    "statement": "The project description is \"LLM-powered wiki that auto-updates from git commits (Karpathy LLM Wiki pattern)\".",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the project uses 'readme.md' as its readme file.": {
+    "statement": "The project uses 'README.md' as its readme file.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the main script entry point for llmwikidoc is 'llmwikidoc.cl": {
+    "statement": "The main script entry point for llmwikidoc is 'llmwikidoc.cli:app'.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "hatchling::the project build system uses 'hatchling'.": {
+    "statement": "The project build system uses 'hatchling'.",
+    "entity": "hatchling",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "python::the project's required python version is specified as '>=3.1": {
+    "statement": "The project's required Python version is specified as '>=3.12' in pyproject.toml.",
+    "entity": "Python",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::development dependencies include hatchling, pyinstaller, pyt": {
+    "statement": "Development dependencies include hatchling, pyinstaller, pytest, and pytest-mock.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the 'llmwikidoc init' command installs a git hook and create": {
+    "statement": "The 'llmwikidoc init' command installs a git hook and creates the 'wiki/' directory.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::a 'git commit' action triggers 'llmwikidoc ingest' via the i": {
+    "statement": "A 'git commit' action triggers 'llmwikidoc ingest' via the installed git hook to update the wiki.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "gemini_api_key::the 'gemini_api_key' environment variable must be exported o": {
+    "statement": "The 'GEMINI_API_KEY' environment variable must be exported or set for llmwikidoc to function.",
+    "entity": "GEMINI_API_KEY",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::llmwikidoc can be installed via a python wheel from a github": {
+    "statement": "llmwikidoc can be installed via a Python wheel from a GitHub releases URL.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::llmwikidoc can be installed globally using the 'uv tool inst": {
+    "statement": "llmwikidoc can be installed globally using the 'uv tool install' command.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::an executable version of llmwikidoc for windows is available": {
+    "statement": "An executable version of llmwikidoc for Windows is available for download.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "pytest::pytest test paths are configured to be in the 'tests' direct": {
+    "statement": "Pytest test paths are configured to be in the 'tests' directory.",
+    "entity": "pytest",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the 'llmwikidoc query' command is used to query the wiki.": {
+    "statement": "The 'llmwikidoc query' command is used to query the wiki.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the 'llmwikidoc status' command is used to check the status ": {
+    "statement": "The 'llmwikidoc status' command is used to check the status of the wiki.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:44Z",
+    "last_reinforced": "2026-05-01T23:43:44Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the `llmwikidoc` module provides an llm-powered wiki.": {
+    "statement": "The `llmwikidoc` module provides an LLM-powered wiki.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:52Z",
+    "last_reinforced": "2026-05-01T23:43:52Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the `llmwikidoc` wiki is designed to be auto-updated from gi": {
+    "statement": "The `llmwikidoc` wiki is designed to be auto-updated from git commits.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:52Z",
+    "last_reinforced": "2026-05-01T23:43:52Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc::the current version of the `llmwikidoc` package is '0.1.0'.": {
+    "statement": "The current version of the `llmwikidoc` package is '0.1.0'.",
+    "entity": "llmwikidoc",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:43:52Z",
+    "last_reinforced": "2026-05-01T23:43:52Z",
+    "contradicted_by": []
+  },
+  "llmwikidoc.cli::the 'llmwikidoc' cli application is built using the `typer` ": {
+    "statement": "The 'llmwikidoc' CLI application is built using the `typer` library.",
+    "entity": "llmwikidoc.cli",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "app::the `app` typer instance is named 'llmwikidoc'.": {
+    "statement": "The `app` Typer instance is named 'llmwikidoc'.",
+    "entity": "app",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "app::cli completion is disabled for the `app` typer instance (`ad": {
+    "statement": "CLI completion is disabled for the `app` Typer instance (`add_completion=False`).",
+    "entity": "app",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "init::the `init` command's 'path' argument defaults to the current": {
+    "statement": "The `init` command's 'path' argument defaults to the current working directory.",
+    "entity": "init",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "init::the `init` command requires a '.git' directory to exist in t": {
+    "statement": "The `init` command requires a '.git' directory to exist in the specified project root.",
+    "entity": "init",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "init::the `init` command writes a default configuration file named": {
+    "statement": "The `init` command writes a default configuration file named '.llmwikidoc.toml' to the project root.",
+    "entity": "init",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "init::the `init` command initializes the wiki directory specified ": {
+    "statement": "The `init` command initializes the wiki directory specified in the configuration.",
+    "entity": "init",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "_install_hook::the `_install_hook` function creates or appends to the '.git": {
+    "statement": "The `_install_hook` function creates or appends to the '.git/hooks/post-commit' file.",
+    "entity": "_install_hook",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "_install_hook::the `_install_hook` function makes the 'post-commit' hook sc": {
+    "statement": "The `_install_hook` function makes the 'post-commit' hook script executable.",
+    "entity": "_install_hook",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "_hook_script::the `_hook_script` generates content that executes 'llmwikid": {
+    "statement": "The `_hook_script` generates content that executes 'llmwikidoc ingest --quiet' in the background.",
+    "entity": "_hook_script",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "ingest::the `ingest` command's 'sha' option defaults to 'head'.": {
+    "statement": "The `ingest` command's 'sha' option defaults to 'HEAD'.",
+    "entity": "ingest",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "ingest::the `ingest` command excludes files within the wiki director": {
+    "statement": "The `ingest` command excludes files within the wiki directory (e.g., 'wiki/') from ingestion.",
+    "entity": "ingest",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "ingest::the `ingest` command can ingest all commits in history using": {
+    "statement": "The `ingest` command can ingest all commits in history using the '--all' option.",
+    "entity": "ingest",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "_ingest_all::the `_ingest_all` function determines already-ingested shas ": {
+    "statement": "The `_ingest_all` function determines already-ingested SHAs from existing summary files in the wiki path's 'summaries' subdirectory.",
+    "entity": "_ingest_all",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "_ingest_all::the `_ingest_all` function iterates through git commits in r": {
+    "statement": "The `_ingest_all` function iterates through git commits in reverse chronological order (`repo.iter_commits(reverse=True)`).",
+    "entity": "_ingest_all",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "ingestall::the `ingestall` command processes files found by `scan_files": {
+    "statement": "The `ingestall` command processes files found by `scan_files` in the project root.",
+    "entity": "ingestall",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "ingestall::the `ingestall` command excludes the wiki directory and its ": {
+    "statement": "The `ingestall` command excludes the wiki directory and its contents from file scanning.",
+    "entity": "ingestall",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "ingestall::the `ingestall` command's `--dry-run` option shows which fil": {
+    "statement": "The `ingestall` command's `--dry-run` option shows which files would be processed and how they would be batched without calling the LLM.",
+    "entity": "ingestall",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "file ingestion::files are batched for `ingestall` processing with a maximum ": {
+    "statement": "Files are batched for `ingestall` processing with a maximum size of 10,000 characters per batch.",
+    "entity": "File Ingestion",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "console output::console output uses `rich.console`, `rich.panel`, and `rich.": {
+    "statement": "Console output uses `rich.Console`, `rich.Panel`, and `rich.Table` for formatted messages, including success/error indicators.",
+    "entity": "Console Output",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:27Z",
+    "last_reinforced": "2026-05-01T23:44:27Z",
+    "contradicted_by": []
+  },
+  "fact::the fact class includes fields for statement, entity, confid": {
+    "statement": "The Fact class includes fields for statement, entity, confidence, sources, created, last_reinforced, and contradicted_by.",
+    "entity": "Fact",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "fact::fact instances can be converted to a dictionary using to_dic": {
+    "statement": "Fact instances can be converted to a dictionary using to_dict() and recreated from a dictionary using from_dict().",
+    "entity": "Fact",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidencestore::confidencestore manages facts using a dictionary where keys ": {
+    "statement": "ConfidenceStore manages facts using a dictionary where keys are derived from the entity and statement hash.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidencestore::the add_fact method initializes a new fact with `confidencec": {
+    "statement": "The add_fact method initializes a new fact with `ConfidenceConfig.initial` confidence or reinforces an existing one.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidencestore::the reinforce method increases a fact's confidence by `confi": {
+    "statement": "The reinforce method increases a fact's confidence by `ConfidenceConfig.reinforce_delta`.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidencestore::the contradict method decreases a fact's confidence by `conf": {
+    "statement": "The contradict method decreases a fact's confidence by `ConfidenceConfig.contradict_delta`.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "fact::confidence scores are capped between 0.0 and 1.0.": {
+    "statement": "Confidence scores are capped between 0.0 and 1.0.",
+    "entity": "Fact",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidencestore::the apply_decay method reduces fact confidence based on `con": {
+    "statement": "The apply_decay method reduces fact confidence based on `ConfidenceConfig.decay_days` and time elapsed.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidencestore::confidencestore persists fact data to a json file at `self.p": {
+    "statement": "ConfidenceStore persists fact data to a JSON file at `self.path`.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "_fact_key::the _fact_key function combines the lowercase entity and the": {
+    "statement": "The _fact_key function combines the lowercase entity and the first 60 characters of the statement.",
+    "entity": "_fact_key",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "config::configuration is loaded from '.llmwikidoc.toml' in the proje": {
+    "statement": "Configuration is loaded from '.llmwikidoc.toml' in the project root.",
+    "entity": "config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "config::the default llm model is 'gemini-2.5-flash'.": {
+    "statement": "The default LLM model is 'gemini-2.5-flash'.",
+    "entity": "Config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "config::the default wiki directory is 'wiki'.": {
+    "statement": "The default wiki directory is 'wiki'.",
+    "entity": "Config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "config::the `gemini_api_key` is read from environment variables.": {
+    "statement": "The `GEMINI_API_KEY` is read from environment variables.",
+    "entity": "Config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidenceconfig::the default initial confidence is 0.7.": {
+    "statement": "The default initial confidence is 0.7.",
+    "entity": "ConfidenceConfig",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidenceconfig::the default reinforce delta is 0.1.": {
+    "statement": "The default reinforce delta is 0.1.",
+    "entity": "ConfidenceConfig",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidenceconfig::the default contradict delta is -0.2.": {
+    "statement": "The default contradict delta is -0.2.",
+    "entity": "ConfidenceConfig",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "confidenceconfig::the default confidence decay period is 30 days.": {
+    "statement": "The default confidence decay period is 30 days.",
+    "entity": "ConfidenceConfig",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "_find_project_root::the _find_project_root function identifies the project root ": {
+    "statement": "The _find_project_root function identifies the project root by searching for a '.git' directory.",
+    "entity": "_find_project_root",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:44:44Z",
+    "last_reinforced": "2026-05-01T23:44:44Z",
+    "contradicted_by": []
+  },
+  "working::the working_ttl_days threshold for facts in the working tier": {
+    "statement": "The WORKING_TTL_DAYS threshold for facts in the working tier is 7 days.",
+    "entity": "working",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "episodic::the episodic_ttl_days threshold for pages in the episodic ti": {
+    "statement": "The EPISODIC_TTL_DAYS threshold for pages in the episodic tier is 30 days.",
+    "entity": "episodic",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "semantic::the semantic_ttl_days threshold for pages in the semantic ti": {
+    "statement": "The SEMANTIC_TTL_DAYS threshold for pages in the semantic tier is 90 days.",
+    "entity": "semantic",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "procedural::the procedural_threshold confidence for promotion to the pro": {
+    "statement": "The PROCEDURAL_THRESHOLD confidence for promotion to the procedural tier is 0.85.",
+    "entity": "procedural",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "consolidation tiers::the defined order of consolidation tiers is 'working', 'epis": {
+    "statement": "The defined order of consolidation tiers is 'working', 'episodic', 'semantic', 'procedural'.",
+    "entity": "Consolidation tiers",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_promote_facts::working-tier facts promote to episodic if they have at least": {
+    "statement": "Working-tier facts promote to episodic if they have at least 2 sources and confidence >= 0.5, or are older than WORKING_TTL_DAYS and confidence >= 0.6.",
+    "entity": "_promote_facts",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::episodic pages promote to semantic if they have at least 5 s": {
+    "statement": "Episodic pages promote to semantic if they have at least 5 sources and confidence >= 0.7, or are older than EPISODIC_TTL_DAYS and confidence >= 0.65.",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::semantic pages promote to procedural if their confidence >= ": {
+    "statement": "Semantic pages promote to procedural if their confidence >= PROCEDURAL_THRESHOLD and they are older than SEMANTIC_TTL_DAYS.",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_promote_pages::page compression is applied when promoting a page to 'semant": {
+    "statement": "Page compression is applied when promoting a page to 'semantic' or 'procedural' tiers, provided an LLM is available.",
+    "entity": "_promote_pages",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_compress_page::the 'semantic' compression instruction targets 30% of the or": {
+    "statement": "The 'semantic' compression instruction targets 30% of the original page length and focuses on essential facts and relationships, removing implementation details.",
+    "entity": "_compress_page",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_compress_page::the 'procedural' compression instruction targets 10-15% of t": {
+    "statement": "The 'procedural' compression instruction targets 10-15% of the original page length, distilling to stable, timeless facts and removing temporal references.",
+    "entity": "_compress_page",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::a fact is considered 'procedural' if it has at least 5 sourc": {
+    "statement": "A fact is considered 'procedural' if it has at least 5 sources and confidence >= PROCEDURAL_THRESHOLD.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::a fact is considered 'semantic' if it has at least 3 sources": {
+    "statement": "A fact is considered 'semantic' if it has at least 3 sources (and not meeting 'procedural' criteria).",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::a fact is considered 'episodic' if it has at least 2 sources": {
+    "statement": "A fact is considered 'episodic' if it has at least 2 sources (and not meeting 'semantic' or 'procedural' criteria).",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::facts with confidence below 0.3 after decay generate a decay": {
+    "statement": "Facts with confidence below 0.3 after decay generate a decay warning.",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:13Z",
+    "last_reinforced": "2026-05-01T23:45:13Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph::the knowledgegraph class internally uses a networkx.digraph ": {
+    "statement": "The KnowledgeGraph class internally uses a networkx.DiGraph object to represent the directed graph structure.",
+    "entity": "KnowledgeGraph",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:56Z",
+    "last_reinforced": "2026-05-01T23:45:56Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph.add_relation::the knowledgegraph.add_relation method validates relation ty": {
+    "statement": "The KnowledgeGraph.add_relation method validates relation types against the `VALID_RELATION_TYPES` set and defaults to 'related_to' if an invalid type is provided.",
+    "entity": "KnowledgeGraph.add_relation",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:56Z",
+    "last_reinforced": "2026-05-01T23:45:56Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph.save::the knowledgegraph.save method serializes the graph to a jso": {
+    "statement": "The KnowledgeGraph.save method serializes the graph to a JSON file using `networkx.node_link_data` and `json.dumps` with a 2-space indent.",
+    "entity": "KnowledgeGraph.save",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:56Z",
+    "last_reinforced": "2026-05-01T23:45:56Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph._load::the knowledgegraph._load method deserializes the graph from ": {
+    "statement": "The KnowledgeGraph._load method deserializes the graph from a JSON file using `json.loads` and `networkx.node_link_graph`.",
+    "entity": "KnowledgeGraph._load",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:56Z",
+    "last_reinforced": "2026-05-01T23:45:56Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph.find_path::the knowledgegraph.find_path method is designed to catch `ne": {
+    "statement": "The KnowledgeGraph.find_path method is designed to catch `networkx.NetworkXNoPath` and `networkx.NodeNotFound` exceptions, returning an empty list in such cases.",
+    "entity": "KnowledgeGraph.find_path",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:56Z",
+    "last_reinforced": "2026-05-01T23:45:56Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph.search_entities::the knowledgegraph.search_entities method performs entity na": {
+    "statement": "The KnowledgeGraph.search_entities method performs entity name matching in a case-insensitive manner.",
+    "entity": "KnowledgeGraph.search_entities",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:56Z",
+    "last_reinforced": "2026-05-01T23:45:56Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph.save::the knowledgegraph ensures parent directories for the persis": {
+    "statement": "The KnowledgeGraph ensures parent directories for the persistence file are created automatically when saving.",
+    "entity": "KnowledgeGraph.save",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:45:56Z",
+    "last_reinforced": "2026-05-01T23:45:56Z",
+    "contradicted_by": []
+  },
+  "ingest_commit::the `ingest_commit` function is the main orchestrator of the": {
+    "statement": "The `ingest_commit` function is the main orchestrator of the commit ingestion pipeline.",
+    "entity": "ingest_commit",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:10Z",
+    "last_reinforced": "2026-05-01T23:46:10Z",
+    "contradicted_by": []
+  },
+  "ingestresult::the `ingestresult` class collects and reports the outcomes a": {
+    "statement": "The `IngestResult` class collects and reports the outcomes and metrics of a single commit ingestion.",
+    "entity": "IngestResult",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:10Z",
+    "last_reinforced": "2026-05-01T23:46:10Z",
+    "contradicted_by": []
+  },
+  "ingest_commit::the pipeline reads commit context, performs llm-based extrac": {
+    "statement": "The pipeline reads commit context, performs LLM-based extraction, and then updates wiki pages, a knowledge graph, and a confidence store.",
+    "entity": "ingest_commit",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:10Z",
+    "last_reinforced": "2026-05-01T23:46:10Z",
+    "contradicted_by": []
+  },
+  "skippedcommit::if a commit has no relevant changes after filtering, a `skip": {
+    "statement": "If a commit has no relevant changes after filtering, a `SkippedCommit` exception is raised.",
+    "entity": "SkippedCommit",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:10Z",
+    "last_reinforced": "2026-05-01T23:46:10Z",
+    "contradicted_by": []
+  },
+  "_extract::the `_extract` function handles the interaction with the llm": {
+    "statement": "The `_extract` function handles the interaction with the LLM and includes a fallback mechanism for extraction failures, using only the commit message.",
+    "entity": "_extract",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:10Z",
+    "last_reinforced": "2026-05-01T23:46:10Z",
+    "contradicted_by": []
+  },
+  "_build_extraction_prompt::llm prompts are constructed with truncated diffs and file co": {
+    "statement": "LLM prompts are constructed with truncated diffs and file contents to manage token limits.",
+    "entity": "_build_extraction_prompt",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:10Z",
+    "last_reinforced": "2026-05-01T23:46:10Z",
+    "contradicted_by": []
+  },
+  "wikimanager::wiki updates include creating summary pages for commits, cre": {
+    "statement": "Wiki updates include creating summary pages for commits, creating or updating entity pages, and adding relations to a knowledge graph.",
+    "entity": "WikiManager",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:10Z",
+    "last_reinforced": "2026-05-01T23:46:10Z",
+    "contradicted_by": []
+  },
+  "confidencestore::facts extracted by the llm are added to a `confidencestore`,": {
+    "statement": "Facts extracted by the LLM are added to a `ConfidenceStore`, which also tracks contradictions.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:10Z",
+    "last_reinforced": "2026-05-01T23:46:10Z",
+    "contradicted_by": []
+  },
+  "ingest_commit::the module appends a summary of each ingestion operation to ": {
+    "statement": "The module appends a summary of each ingestion operation to a wiki log.",
+    "entity": "ingest_commit",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:10Z",
+    "last_reinforced": "2026-05-01T23:46:10Z",
+    "contradicted_by": []
+  },
+  "ingest_all_files::the `ingest_all_files` function groups files by directory in": {
+    "statement": "The `ingest_all_files` function groups files by directory into batches before sending them to the LLM.",
+    "entity": "ingest_all_files",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:21Z",
+    "last_reinforced": "2026-05-01T23:46:21Z",
+    "contradicted_by": []
+  },
+  "scan_files::files larger than 100kb are skipped during the `scan_files` ": {
+    "statement": "Files larger than 100KB are skipped during the `scan_files` process.",
+    "entity": "scan_files",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:21Z",
+    "last_reinforced": "2026-05-01T23:46:21Z",
+    "contradicted_by": []
+  },
+  "_batch_char_budget::the `_batch_char_budget` for llm processing is set to 10,000": {
+    "statement": "The `_BATCH_CHAR_BUDGET` for LLM processing is set to 10,000 characters.",
+    "entity": "_BATCH_CHAR_BUDGET",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:21Z",
+    "last_reinforced": "2026-05-01T23:46:21Z",
+    "contradicted_by": []
+  },
+  "_batch_files::relative file paths generated by `_batch_files` have backsla": {
+    "statement": "Relative file paths generated by `_batch_files` have backslashes replaced with forward slashes for consistency.",
+    "entity": "_batch_files",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:21Z",
+    "last_reinforced": "2026-05-01T23:46:21Z",
+    "contradicted_by": []
+  },
+  "_extract_from_files::the output of `_extract_from_files` includes summary, entiti": {
+    "statement": "The output of `_extract_from_files` includes summary, entities, relations, facts, and contradictions.",
+    "entity": "_extract_from_files",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:46:21Z",
+    "last_reinforced": "2026-05-01T23:46:21Z",
+    "contradicted_by": []
+  },
+  "llmclient.generate::the `llmclient.generate` method retries failed api calls up ": {
+    "statement": "The `LLMClient.generate` method retries failed API calls up to 3 times.",
+    "entity": "LLMClient.generate",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:05Z",
+    "last_reinforced": "2026-05-01T23:47:05Z",
+    "contradicted_by": []
+  },
+  "llmclient.generate::the `llmclient.generate` method implements exponential backo": {
+    "statement": "The `LLMClient.generate` method implements exponential backoff with sleep durations of 2s and 4s.",
+    "entity": "LLMClient.generate",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:05Z",
+    "last_reinforced": "2026-05-01T23:47:05Z",
+    "contradicted_by": []
+  },
+  "llmclient.embed::the `llmclient.embed` method uses the 'gemini-embedding-001'": {
+    "statement": "The `LLMClient.embed` method uses the 'gemini-embedding-001' model.",
+    "entity": "LLMClient.embed",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:05Z",
+    "last_reinforced": "2026-05-01T23:47:05Z",
+    "contradicted_by": []
+  },
+  "llmclient::the `llmclient` is designed to be used as a context manager,": {
+    "statement": "The `LLMClient` is designed to be used as a context manager, ensuring client closure.",
+    "entity": "LLMClient",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:05Z",
+    "last_reinforced": "2026-05-01T23:47:05Z",
+    "contradicted_by": []
+  },
+  "llmclient.generate_structured::the `llmclient.generate_structured` method raises a `valueer": {
+    "statement": "The `LLMClient.generate_structured` method raises a `ValueError` if the raw response from Gemini is not valid JSON.",
+    "entity": "LLMClient.generate_structured",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:05Z",
+    "last_reinforced": "2026-05-01T23:47:05Z",
+    "contradicted_by": []
+  },
+  "llmclient.__init__::the `llmclient` initializes `google.genai.client` using an a": {
+    "statement": "The `LLMClient` initializes `google.genai.Client` using an API key from the provided `Config` object.",
+    "entity": "LLMClient.__init__",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:05Z",
+    "last_reinforced": "2026-05-01T23:47:05Z",
+    "contradicted_by": []
+  },
+  "searchresult::the `searchresult` class is a dataclass containing `page` (w": {
+    "statement": "The `SearchResult` class is a dataclass containing `page` (WikiPage), `score` (float), and `sources` (list of strings) attributes.",
+    "entity": "SearchResult",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "embeddingcache::the `embeddingcache` stores embeddings in an in-memory dicti": {
+    "statement": "The `EmbeddingCache` stores embeddings in an in-memory dictionary and persists them to a JSON file named '.embeddings/cache.json' within the wiki path.",
+    "entity": "EmbeddingCache",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "hybridsearch::the `hybridsearch` class combines bm25, vector embeddings, a": {
+    "statement": "The `HybridSearch` class combines BM25, vector embeddings, and knowledge graph traversal as its three search streams.",
+    "entity": "HybridSearch",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "hybridsearch::the `hybridsearch.search` method uses the `_reciprocal_rank_": {
+    "statement": "The `HybridSearch.search` method uses the `_reciprocal_rank_fusion` function with configurable weights from `config.search` to combine results.",
+    "entity": "HybridSearch",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "hybridsearch::the `hybridsearch._vector_search` method uses `llmclient` to": {
+    "statement": "The `HybridSearch._vector_search` method uses `LLMClient` to generate embeddings and `_cosine_similarity` to score page relevance, caching embeddings via `EmbeddingCache`.",
+    "entity": "HybridSearch",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "hybridsearch::the `hybridsearch._vector_search` method truncates page text": {
+    "statement": "The `HybridSearch._vector_search` method truncates page text to 2000 characters before generating embeddings to manage token limits and API costs.",
+    "entity": "HybridSearch",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "_tokenize::the `_tokenize` function uses `re.findall(r'\\w+', text.lower": {
+    "statement": "The `_tokenize` function uses `re.findall(r'\\w+', text.lower())` to extract words from text.",
+    "entity": "_tokenize",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "_content_hash::the `_content_hash` function computes a sha256 hash of the f": {
+    "statement": "The `_content_hash` function computes a SHA256 hash of the first 2000 characters of an input text and truncates the hash to 16 characters.",
+    "entity": "_content_hash",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "hybridsearch::the `hybridsearch.build_index` method loads all wiki pages v": {
+    "statement": "The `HybridSearch.build_index` method loads all wiki pages via `WikiManager` and initializes the `BM25Okapi` index using their tokenized content.",
+    "entity": "HybridSearch",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "hybridsearch::the `hybridsearch._graph_search` method identifies entities ": {
+    "statement": "The `HybridSearch._graph_search` method identifies entities in the `KnowledgeGraph` that match the query and expands the search to include 1-hop neighbors.",
+    "entity": "HybridSearch",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "_reciprocal_rank_fusion::the `_reciprocal_rank_fusion` function calculates scores for": {
+    "statement": "The `_reciprocal_rank_fusion` function calculates scores for items in ranked lists using the formula `weight * (1.0 / (k + rank))`.",
+    "entity": "_reciprocal_rank_fusion",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:47:38Z",
+    "last_reinforced": "2026-05-01T23:47:38Z",
+    "contradicted_by": []
+  },
+  "parse_frontmatter::the `parse_frontmatter` function uses a regular expression `": {
+    "statement": "The `parse_frontmatter` function uses a regular expression `_FRONTMATTER_RE` to identify and extract the frontmatter block.",
+    "entity": "parse_frontmatter",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "parse_frontmatter::`parse_frontmatter` automatically attempts to convert frontm": {
+    "statement": "`parse_frontmatter` automatically attempts to convert frontmatter values to `int` or `float` if they appear numeric, and handles simple comma-separated lists enclosed in `[]`.",
+    "entity": "parse_frontmatter",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "render_frontmatter::`render_frontmatter` formats floating-point values in the fr": {
+    "statement": "`render_frontmatter` formats floating-point values in the frontmatter to two decimal places (e.g., `1.23`).",
+    "entity": "render_frontmatter",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "wikipage::a `wikipage` object loads its content from the specified fil": {
+    "statement": "A `WikiPage` object loads its content from the specified file path during initialization if the file already exists.",
+    "entity": "WikiPage",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "wikimanager::upon initialization, `wikimanager` creates 'entities', 'conc": {
+    "statement": "Upon initialization, `WikiManager` creates 'entities', 'concepts', and 'summaries' subdirectories within its root wiki path if they don't already exist.",
+    "entity": "WikiManager",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "create_or_update_page::when `create_or_update_page` updates an existing page, it up": {
+    "statement": "When `create_or_update_page` updates an existing page, it updates the 'updated' timestamp, merges 'sources' lists without duplicates, and increases the 'confidence' value by 0.05 (up to a maximum of 1.0).",
+    "entity": "create_or_update_page",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "create_summary::`create_summary` explicitly sets the 'confidence' frontmatte": {
+    "statement": "`create_summary` explicitly sets the 'confidence' frontmatter field to 1.0 and the 'tier' to 'episodic' for all newly created summary pages.",
+    "entity": "create_summary",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "all_pages::the `all_pages` method explicitly excludes files named 'inde": {
+    "statement": "The `all_pages` method explicitly excludes files named 'index.md' and 'log.md' from the list of returned wiki pages.",
+    "entity": "all_pages",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "update_index::`update_index` either creates 'index.md' if absent, updates ": {
+    "statement": "`update_index` either creates 'index.md' if absent, updates an existing entry, or adds a new entry under the appropriate page type section.",
+    "entity": "update_index",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "append_log::`append_log` adds new entries with a utc timestamp, operatio": {
+    "statement": "`append_log` adds new entries with a UTC timestamp, operation, short SHA, and detail to 'log.md', creating the file if it doesn't exist.",
+    "entity": "append_log",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "_safe_filename::the `_safe_filename` utility function converts input strings": {
+    "statement": "The `_safe_filename` utility function converts input strings to lowercase, removes non-alphanumeric characters (except hyphens), and replaces sequences of whitespace with single underscores.",
+    "entity": "_safe_filename",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "_now_iso::the `_now_iso` function ensures that all generated timestamp": {
+    "statement": "The `_now_iso` function ensures that all generated timestamps are in UTC by using `datetime.now(timezone.utc)`.",
+    "entity": "_now_iso",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:02Z",
+    "last_reinforced": "2026-05-01T23:48:02Z",
+    "contradicted_by": []
+  },
+  "config::the default model configured is 'gemini-2.5-flash'.": {
+    "statement": "The default model configured is 'gemini-2.5-flash'.",
+    "entity": "Config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "config::the default wiki directory is named 'wiki'.": {
+    "statement": "The default wiki directory is named 'wiki'.",
+    "entity": "Config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "config::the default context depth is 2.": {
+    "statement": "The default context depth is 2.",
+    "entity": "Config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "confidenceconfig::the initial confidence for a new fact is 0.7.": {
+    "statement": "The initial confidence for a new fact is 0.7.",
+    "entity": "ConfidenceConfig",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "confidencestore::adding a new fact sets its initial confidence to 0.7.": {
+    "statement": "Adding a new fact sets its initial confidence to 0.7.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "confidencestore::reinforcing a fact increases its confidence.": {
+    "statement": "Reinforcing a fact increases its confidence.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "confidencestore::fact confidence is capped at 1.0.": {
+    "statement": "Fact confidence is capped at 1.0.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "confidencestore::contradicting a fact decreases its confidence.": {
+    "statement": "Contradicting a fact decreases its confidence.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "confidencestore::fact confidence is floored at 0.0.": {
+    "statement": "Fact confidence is floored at 0.0.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "confidencestore::confidencestore can persist its facts to a json file.": {
+    "statement": "ConfidenceStore can persist its facts to a JSON file.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "confidencestore::confidencestore can reload facts from a saved json file.": {
+    "statement": "ConfidenceStore can reload facts from a saved JSON file.",
+    "entity": "ConfidenceStore",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "config::accessing the api key without 'gemini_api_key' environment v": {
+    "statement": "Accessing the API key without 'GEMINI_API_KEY' environment variable set raises an EnvironmentError.",
+    "entity": "Config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "config::the api key is retrieved from the 'gemini_api_key' environme": {
+    "statement": "The API key is retrieved from the 'GEMINI_API_KEY' environment variable.",
+    "entity": "Config",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "_find_project_root::the project root is identified by the presence of a '.git' d": {
+    "statement": "The project root is identified by the presence of a '.git' directory.",
+    "entity": "_find_project_root",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:16Z",
+    "last_reinforced": "2026-05-01T23:48:16Z",
+    "contradicted_by": []
+  },
+  "tests/test_consolidate.py::the `test_consolidate.py` file contains unit tests for the `": {
+    "statement": "The `test_consolidate.py` file contains unit tests for the `consolidate.py` module.",
+    "entity": "tests/test_consolidate.py",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::`_fact_tier` returns 'working' for a fact with a single sour": {
+    "statement": "`_fact_tier` returns 'working' for a Fact with a single source.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::`_fact_tier` returns 'episodic' for a fact with two sources.": {
+    "statement": "`_fact_tier` returns 'episodic' for a Fact with two sources.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::`_fact_tier` returns 'semantic' for a fact with three source": {
+    "statement": "`_fact_tier` returns 'semantic' for a Fact with three sources.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_fact_tier::`_fact_tier` returns 'procedural' for a fact with five or mo": {
+    "statement": "`_fact_tier` returns 'procedural' for a Fact with five or more sources and confidence greater than or equal to `PROCEDURAL_THRESHOLD`.",
+    "entity": "_fact_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_tier_stability_multiplier::the `_tier_stability_multiplier` for 'working' tier is less ": {
+    "statement": "The `_tier_stability_multiplier` for 'working' tier is less than 'episodic' tier.",
+    "entity": "_tier_stability_multiplier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_tier_stability_multiplier::the `_tier_stability_multiplier` for 'episodic' tier is less": {
+    "statement": "The `_tier_stability_multiplier` for 'episodic' tier is less than 'semantic' tier.",
+    "entity": "_tier_stability_multiplier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_tier_stability_multiplier::the `_tier_stability_multiplier` for 'semantic' tier is less": {
+    "statement": "The `_tier_stability_multiplier` for 'semantic' tier is less than 'procedural' tier.",
+    "entity": "_tier_stability_multiplier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_tier_stability_multiplier::the `_tier_stability_multiplier` returns `1.0` for an unknow": {
+    "statement": "The `_tier_stability_multiplier` returns `1.0` for an unknown tier.",
+    "entity": "_tier_stability_multiplier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::`_apply_decay` reduces the confidence of facts that have not": {
+    "statement": "`_apply_decay` reduces the confidence of facts that have not been reinforced recently.",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::`_apply_decay` skips facts reinforced on the current day.": {
+    "statement": "`_apply_decay` skips facts reinforced on the current day.",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::`_apply_decay` generates warnings in `consolidationresult` f": {
+    "statement": "`_apply_decay` generates warnings in `ConsolidationResult` for facts whose confidence drops very low (e.g., below 0.35).",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_apply_decay::procedural facts decay slower than facts in other tiers.": {
+    "statement": "Procedural facts decay slower than facts in other tiers.",
+    "entity": "_apply_decay",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_promote_facts::`_promote_facts` adds a 'consolidated' source marker to fact": {
+    "statement": "`_promote_facts` adds a 'consolidated' source marker to facts that are older than `WORKING_TTL_DAYS` and have sufficient confidence.",
+    "entity": "_promote_facts",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_promote_facts::`_promote_facts` does not re-promote facts that already cont": {
+    "statement": "`_promote_facts` does not re-promote facts that already contain the 'consolidated' source marker.",
+    "entity": "_promote_facts",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_promote_facts::`_promote_facts` skips facts with low confidence (e.g., belo": {
+    "statement": "`_promote_facts` skips facts with low confidence (e.g., below 0.5).",
+    "entity": "_promote_facts",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::`_compute_new_tier` can promote a 'working' tier item to 'ep": {
+    "statement": "`_compute_new_tier` can promote a 'working' tier item to 'episodic' if it has at least three sources or is older than `WORKING_TTL_DAYS`.",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::`_compute_new_tier` can promote an 'episodic' tier item to '": {
+    "statement": "`_compute_new_tier` can promote an 'episodic' tier item to 'semantic' if it has at least five sources or is older than `EPISODIC_TTL_DAYS`.",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::`_compute_new_tier` can promote a 'semantic' tier item to 'p": {
+    "statement": "`_compute_new_tier` can promote a 'semantic' tier item to 'procedural' if its confidence is at or above `PROCEDURAL_THRESHOLD` and it is older than `SEMANTIC_TTL_DAYS`.",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_compute_new_tier::`_compute_new_tier` ensures the tier remains unchanged if pr": {
+    "statement": "`_compute_new_tier` ensures the tier remains unchanged if promotion criteria are not met.",
+    "entity": "_compute_new_tier",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "_promote_pages::`_promote_pages` updates the 'tier' field in a `wikipage`'s ": {
+    "statement": "`_promote_pages` updates the 'tier' field in a `WikiPage`'s frontmatter if promotion criteria are met.",
+    "entity": "_promote_pages",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "run_consolidation::`run_consolidation` returns an instance of `consolidationres": {
+    "statement": "`run_consolidation` returns an instance of `ConsolidationResult`.",
+    "entity": "run_consolidation",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "run_consolidation::`run_consolidation` saves the `confidencestore` to disk afte": {
+    "statement": "`run_consolidation` saves the `ConfidenceStore` to disk after execution.",
+    "entity": "run_consolidation",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "create_digest::`create_digest` generates a digest with a title, period summ": {
+    "statement": "`create_digest` generates a digest with a title, period summary, key themes, entities changed, durable facts, and open questions.",
+    "entity": "create_digest",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:48:45Z",
+    "last_reinforced": "2026-05-01T23:48:45Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph::the knowledgegraph class provides methods for adding entitie": {
+    "statement": "The KnowledgeGraph class provides methods for adding entities and relations, finding neighbors, determining dependents, and searching entities.",
+    "entity": "KnowledgeGraph",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:49:01Z",
+    "last_reinforced": "2026-05-01T23:49:01Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph::the knowledgegraph supports persistence, allowing its state ": {
+    "statement": "The KnowledgeGraph supports persistence, allowing its state to be saved to and reloaded from a JSON file.",
+    "entity": "KnowledgeGraph",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:49:01Z",
+    "last_reinforced": "2026-05-01T23:49:01Z",
+    "contradicted_by": []
+  },
+  "knowledgegraph::the knowledgegraph defaults unknown or 'invented' relation t": {
+    "statement": "The KnowledgeGraph defaults unknown or 'invented' relation types to 'related_to'.",
+    "entity": "KnowledgeGraph",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:49:01Z",
+    "last_reinforced": "2026-05-01T23:49:01Z",
+    "contradicted_by": []
+  },
+  "ingest_commit::the ingest_commit function is designed to create wiki pages,": {
+    "statement": "The ingest_commit function is designed to create wiki pages, update the KnowledgeGraph, and log its processing activity.",
+    "entity": "ingest_commit",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:49:01Z",
+    "last_reinforced": "2026-05-01T23:49:01Z",
+    "contradicted_by": []
+  },
+  "_build_extraction_prompt::the _build_extraction_prompt function includes the commit me": {
+    "statement": "The _build_extraction_prompt function includes the commit message, SHA, and file contents in the prompt sent to the LLM.",
+    "entity": "_build_extraction_prompt",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:49:01Z",
+    "last_reinforced": "2026-05-01T23:49:01Z",
+    "contradicted_by": []
+  },
+  "_format_file_contents::the _format_file_contents function truncates long file conte": {
+    "statement": "The _format_file_contents function truncates long file contents to prevent exceeding LLM input limits.",
+    "entity": "_format_file_contents",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:49:01Z",
+    "last_reinforced": "2026-05-01T23:49:01Z",
+    "contradicted_by": []
+  },
+  "mock_extraction::the mock_extraction dictionary defines the expected structur": {
+    "statement": "The MOCK_EXTRACTION dictionary defines the expected structure for LLM output, including arrays for 'entities' and 'relations'.",
+    "entity": "MOCK_EXTRACTION",
+    "confidence": 0.7,
+    "sources": [
+      "snapshot-20260501-234218"
+    ],
+    "created": "2026-05-01T23:49:01Z",
+    "last_reinforced": "2026-05-01T23:49:01Z",
+    "contradicted_by": []
   }
 }
